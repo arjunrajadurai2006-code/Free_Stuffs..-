@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Search Catalog — NEST &amp; NOVA (India) | Electronics &amp; Furniture</title>
+  <meta name="description" content="Search across high-performance flagship electronics and artisanal Scandinavian furniture with instant suggestions.">
+
+  <!-- Google Fonts & Font Awesome 6 Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Core Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <!-- Announcement Bar -->
+  <div class="announcement-bar">
+    <span class="badge-promo">Complimentary Delivery</span>
+    <span>Free White-Glove Shipping on all orders over ₹4,999 &bull; Use code <strong>WELCOME10</strong> for 10% off &bull; Pan-India Delivery</span>
+  </div>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="header-container">
+      <a href="index.html" class="brand-logo">
+        <span class="logo-title">NEST &amp; NOVA</span>
+        <span class="logo-subtitle">Smart Technology. Timeless Living.</span>
+      </a>
+
+      <!-- Flipkart-Inspired Prominent Department Switcher -->
+      <div class="dept-switcher-bar">
+        <a href="electronics.html" class="dept-pill-btn" title="Electronics Department">
+          <i class="fa-solid fa-microchip"></i> Electronics
+        </a>
+        <a href="furniture.html" class="dept-pill-btn" title="Furniture Department">
+          <i class="fa-solid fa-couch"></i> Furniture
+        </a>
+      </div>
+
+      <nav class="main-nav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="electronics.html" class="nav-link">Electronics</a>
+        <a href="furniture.html" class="nav-link">Furniture</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="header-actions">
+        <a href="search.html" class="action-btn" title="Search Catalog" style="color: var(--dark-sage);"><i class="fa-solid fa-magnifying-glass"></i></a>
+        <a href="login.html" class="action-btn account-nav-link" title="Customer Account"><i class="fa-regular fa-user"></i></a>
+        <a href="wishlist.html" class="action-btn" title="Wishlist">
+          <i class="fa-regular fa-heart"></i>
+          <span class="badge-counter wishlist-counter" style="display: none;">0</span>
+        </a>
+        <a href="cart.html" class="action-btn" title="Shopping Bag">
+          <i class="fa-solid fa-bag-shopping"></i>
+          <span class="badge-counter cart-counter" style="display: none;">0</span>
+        </a>
+        <button class="mobile-menu-toggle" aria-label="Toggle Navigation"><i class="fa-solid fa-bars"></i></button>
+      </div>
+    </div>
+  </header>
+
+  <main style="padding: 40px 0 80px;">
+    <div class="container">
+      
+      <!-- Big Search Input Box with Realtime Suggestions -->
+      <div style="max-width: 780px; margin: 0 auto 36px; position: relative;">
+        <h1 style="font-size: 2.2rem; color: var(--walnut-brown); text-align: center; margin-bottom: 20px;">Search Across Electronics &amp; Furniture</h1>
+        
+        <!-- Search Input -->
+        <div style="position: relative;">
+          <input type="text" id="live-search-input" class="form-control" placeholder="Search smartphones, headphones, bouclé sofas, standing desks, OLED TVs..." style="padding: 16px 54px 16px 20px; font-size: 1.1rem; border-radius: var(--radius-md); box-shadow: var(--shadow-card);">
+          <button id="live-search-submit" style="position: absolute; right: 18px; top: 50%; transform: translateY(-50%); font-size: 1.25rem; color: var(--dark-sage); background: none; border: none; cursor: pointer;">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+        </div>
+
+        <!-- Live Suggestions Dropdown -->
+        <div id="search-suggestions-dropdown" style="display: none; position: absolute; top: 100%; left: 0; width: 100%; background: var(--pure-white); border: 1px solid var(--border-color); border-radius: var(--radius-md); box-shadow: var(--shadow-modal); margin-top: 8px; z-index: 100; max-height: 380px; overflow-y: auto;">
+        </div>
+
+        <!-- Department Tabs Filter (Flipkart Style) -->
+        <div style="display: flex; justify-content: center; gap: 8px; margin-top: 16px;">
+          <button class="btn btn-sm btn-outline-sage search-dept-tab active" data-dept="" onclick="setSearchDept('')">All Departments</button>
+          <button class="btn btn-sm btn-outline-sage search-dept-tab" data-dept="electronics" onclick="setSearchDept('electronics')"><i class="fa-solid fa-microchip"></i> Electronics Only</button>
+          <button class="btn btn-sm btn-outline-sage search-dept-tab" data-dept="furniture" onclick="setSearchDept('furniture')"><i class="fa-solid fa-couch"></i> Furniture Only</button>
+        </div>
+
+        <!-- Quick Tag Suggestions -->
+        <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-top: 14px; align-items: center; justify-content: center;">
+          <span style="font-size: 0.82rem; color: var(--muted-text); font-weight: 600;">Popular Inquiries:</span>
+          <button class="btn btn-outline btn-sm" onclick="setSearch('Headphones')">Headphones</button>
+          <button class="btn btn-outline btn-sm" onclick="setSearch('OLED TV')">OLED TV</button>
+          <button class="btn btn-outline btn-sm" onclick="setSearch('Standing Desk')">Standing Desk</button>
+          <button class="btn btn-outline btn-sm" onclick="setSearch('Bouclé Sofa')">Bouclé Sofa</button>
+          <button class="btn btn-outline btn-sm" onclick="setSearch('Titanium')">Titanium</button>
+          <button class="btn btn-outline btn-sm" onclick="setSearch('Platform Bed')">Platform Bed</button>
+        </div>
+      </div>
+
+      <!-- Search Results Header -->
+      <div id="search-status-bar" style="margin-bottom: 24px; font-size: 1.1rem; font-weight: 600; color: var(--walnut-brown); display: none;">
+      </div>
+
+      <!-- Results Grid -->
+      <div class="product-grid" id="search-results-grid">
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <span class="logo-title" style="color: var(--warm-cream); font-size: 1.6rem;">NEST &amp; NOVA</span>
+          <p>Smart Technology. Timeless Living. A curated lifestyle marketplace celebrating high-performance electronics and sustainable artisanal furniture crafted for modern Indian homes.</p>
+        </div>
+        <div>
+          <h4 class="footer-heading">Electronics</h4>
+          <ul class="footer-links">
+            <li><a href="electronics.html?category=smartphones">Smartphones</a></li>
+            <li><a href="electronics.html?category=laptops">Laptops</a></li>
+            <li><a href="electronics.html?category=headphones">Headphones</a></li>
+            <li><a href="electronics.html?category=smart-tvs">Smart TVs</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-heading">Furniture</h4>
+          <ul class="footer-links">
+            <li><a href="furniture.html?category=sofas">Bouclé Sofas</a></li>
+            <li><a href="furniture.html?category=beds">Platform Beds</a></li>
+            <li><a href="furniture.html?category=chairs">Ergonomic Chairs</a></li>
+            <li><a href="furniture.html?category=tables">Dining &amp; Coffee Tables</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-heading">Client Care</h4>
+          <ul class="footer-links">
+            <li><a href="about.html">Our Philosophy</a></li>
+            <li><a href="contact.html">Concierge Support</a></li>
+            <li><a href="wishlist.html">Your Wishlist</a></li>
+            <li><a href="cart.html">Shopping Bag</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-heading">Flagship Experience Atelier</h4>
+          <p style="color: #BDBDB5; font-size: 0.9rem; line-height: 1.6;">
+            100 Feet Road, Indiranagar Design Quarter<br>
+            Bengaluru, Karnataka &ndash; 560038, India<br>
+            <span style="color: var(--primary-sage);"><i class="fa-solid fa-phone"></i> 1800-419-NOVA (Toll Free)</span>
+          </p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>&copy; 2026 NEST &amp; NOVA India Private Limited. All rights reserved. Prices inclusive of all applicable Indian taxes (GST).</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Core Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/products.js"></script>
+
+  <script>
+    const searchInput = document.getElementById('live-search-input');
+    const suggestionsDropdown = document.getElementById('search-suggestions-dropdown');
+    const resultsGrid = document.getElementById('search-results-grid');
+    const statusBar = document.getElementById('search-status-bar');
+
+    let currentDeptFilter = '';
+
+    function setSearchDept(dept) {
+      currentDeptFilter = dept;
+      document.querySelectorAll('.search-dept-tab').forEach(tab => {
+        tab.classList.toggle('active', tab.dataset.dept === dept);
+      });
+      performSearch(searchInput.value.trim());
+    }
+
+    function setSearch(term) {
+      searchInput.value = term;
+      performSearch(term);
+    }
+
+    let debounceTimer = null;
+    searchInput.addEventListener('input', () => {
+      clearTimeout(debounceTimer);
+      const query = searchInput.value.trim();
+      if (query.length < 2) {
+        suggestionsDropdown.style.display = 'none';
+        return;
+      }
+
+      debounceTimer = setTimeout(async () => {
+        try {
+          const res = await api.get('/products/search', { q: query, suggest: 'true' });
+          if (res.suggestions) {
+            renderSuggestions(res.suggestions);
+          }
+        } catch (e) {}
+      }, 250);
+    });
+
+    searchInput.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') {
+        suggestionsDropdown.style.display = 'none';
+        performSearch(searchInput.value.trim());
+      }
+    });
+
+    document.getElementById('live-search-submit').addEventListener('click', () => {
+      suggestionsDropdown.style.display = 'none';
+      performSearch(searchInput.value.trim());
+    });
+
+    function renderSuggestions({ products, categories }) {
+      if ((!products || products.length === 0) && (!categories || categories.length === 0)) {
+        suggestionsDropdown.style.display = 'none';
+        return;
+      }
+
+      let html = '';
+      if (categories && categories.length > 0) {
+        html += `<div style="padding: 10px 16px; background: var(--warm-cream); font-size: 0.75rem; font-weight: 700; text-transform: uppercase; color: var(--walnut-brown);">Suggested Categories</div>`;
+        html += categories.map(c => `
+          <a href="${c.department}.html?category=${c.slug}" style="display: block; padding: 10px 16px; font-size: 0.9rem; color: var(--main-text); border-bottom: 1px solid var(--border-color); text-decoration: none;">
+            <i class="fa-solid fa-folder-open" style="color: var(--primary-sage); margin-right: 8px;"></i> ${c.name} in <span style="text-transform: capitalize; font-weight: 600; color: var(--dark-sage);">${c.department}</span>
+          </a>
+        `).join('');
+      }
+
+      if (products && products.length > 0) {
+        html += `<div style="padding: 10px 16px; background: var(--warm-cream); font-size: 0.75rem; font-weight: 700; text-transform: uppercase; color: var(--walnut-brown);">Matching Products</div>`;
+        html += products.map(p => `
+          <a href="product.html?id=${p.id}" style="display: flex; align-items: center; gap: 12px; padding: 10px 16px; border-bottom: 1px solid var(--border-color); text-decoration: none;">
+            <img src="${p.primary_image || 'assets/images/headphones.svg'}" style="width: 38px; height: 38px; border-radius: 4px; object-fit: contain; background: var(--warm-cream);" onerror="this.onerror=null; this.src='assets/images/headphones.svg';">
+            <div style="flex-grow: 1;">
+              <strong style="font-size: 0.88rem; color: var(--walnut-brown); display: block;">${p.name}</strong>
+              <span style="font-size: 0.8rem; color: var(--dark-sage); font-weight: 600;">${window.formatINR ? window.formatINR(p.price) : '₹' + p.price} &bull; <span style="text-transform: capitalize; color: var(--muted-text); font-weight: 400;">${p.department}</span></span>
+            </div>
+          </a>
+        `).join('');
+      }
+
+      suggestionsDropdown.innerHTML = html;
+      suggestionsDropdown.style.display = 'block';
+    }
+
+    async function performSearch(term) {
+      if (!term) return;
+      resultsGrid.innerHTML = `
+        <div style="grid-column: 1 / -1; text-align: center; padding: 50px 0;">
+          <i class="fa-solid fa-circle-notch fa-spin" style="font-size: 2rem; color: var(--primary-sage);"></i>
+        </div>
+      `;
+
+      try {
+        const res = await api.get('/products/search', { q: term });
+        let items = res.data || [];
+
+        // Apply department filter if active
+        if (currentDeptFilter) {
+          items = items.filter(p => p.department === currentDeptFilter);
+        }
+
+        statusBar.style.display = 'block';
+        const deptLabel = currentDeptFilter ? ` in ${currentDeptFilter.charAt(0).toUpperCase() + currentDeptFilter.slice(1)}` : '';
+        statusBar.textContent = `${items.length} Result${items.length === 1 ? '' : 's'} for "${term}"${deptLabel}`;
+
+        if (items.length === 0) {
+          resultsGrid.innerHTML = `
+            <div class="empty-state" style="grid-column: 1 / -1;">
+              <div class="empty-state-icon"><i class="fa-solid fa-magnifying-glass"></i></div>
+              <h2 class="empty-state-title">No matching pieces found for "${term}"</h2>
+              <p class="empty-state-desc">Try checking for typos or searching by category like "Headphones", "Desk", or "Smartphones".</p>
+              <div style="display: flex; gap: 12px; justify-content: center;">
+                <a href="electronics.html" class="btn btn-primary">Browse Electronics</a>
+                <a href="furniture.html" class="btn btn-outline">Browse Furniture</a>
+              </div>
+            </div>
+          `;
+          return;
+        }
+
+        resultsGrid.innerHTML = items.map(p => ProductsEngine.renderCard(p)).join('');
+      } catch (err) {
+        resultsGrid.innerHTML = `<p style="grid-column: 1 / -1; color: var(--error-color);">Search error: ${err.message}</p>`;
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const urlParams = new URLSearchParams(window.location.search);
+      const q = urlParams.get('q');
+      const dept = urlParams.get('dept');
+      if (dept) {
+        currentDeptFilter = dept;
+        document.querySelectorAll('.search-dept-tab').forEach(tab => {
+          tab.classList.toggle('active', tab.dataset.dept === dept);
+        });
+      }
+      if (q) {
+        searchInput.value = q;
+        performSearch(q);
+      }
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!searchInput.contains(e.target) && !suggestionsDropdown.contains(e.target)) {
+        suggestionsDropdown.style.display = 'none';
+      }
+    });
+  </script>
+</body>
+</html>

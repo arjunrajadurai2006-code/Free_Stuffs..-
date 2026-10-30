@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Secure Checkout — NEST &amp; NOVA (India)</title>
+  <meta name="description" content="Complete your purchase with 100% secure payment across UPI, Cards, Net Banking and Cash on Delivery.">
+
+  <!-- Google Fonts & Font Awesome 6 Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Core Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <!-- Minimal Checkout Header -->
+  <header style="background: var(--pure-white); border-bottom: 1px solid var(--border-color); padding: 16px 0;">
+    <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
+      <a href="index.html" class="brand-logo">
+        <span class="logo-title">NEST &amp; NOVA</span>
+        <span class="logo-subtitle">Smart Technology. Timeless Living.</span>
+      </a>
+
+      <div style="display: flex; align-items: center; gap: 8px; font-size: 0.85rem; color: var(--dark-sage); font-weight: 600;">
+        <i class="fa-solid fa-shield-halved" style="font-size: 1.1rem;"></i> 256-Bit SSL Encrypted Indian Gateway
+      </div>
+    </div>
+  </header>
+
+  <!-- Checkout Multi-Step Indicator -->
+  <div style="background: var(--warm-cream); border-bottom: 1px solid var(--border-color); padding: 18px 0;">
+    <div class="container">
+      <div class="checkout-steps-bar" style="display: flex; justify-content: center; gap: 40px; align-items: center;">
+        <div class="checkout-step active" data-step="1">
+          <span class="step-num">1</span>
+          <span class="step-label">Delivery Address</span>
+        </div>
+        <div class="step-divider" style="width: 40px; height: 1px; background: var(--border-color);"></div>
+        <div class="checkout-step" data-step="2">
+          <span class="step-num">2</span>
+          <span class="step-label">Delivery Schedule</span>
+        </div>
+        <div class="step-divider" style="width: 40px; height: 1px; background: var(--border-color);"></div>
+        <div class="checkout-step" data-step="3">
+          <span class="step-num">3</span>
+          <span class="step-label">Payment Mode</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <main style="padding: 40px 0 80px;" id="checkout-main-area">
+    <div class="container">
+      <div style="display: grid; grid-template-columns: 1.6fr 1fr; gap: 40px;">
+        
+        <!-- Left: Steps Forms -->
+        <div>
+          <!-- STEP 1: Indian Delivery Address -->
+          <div id="step-panel-1" class="checkout-step-panel" style="background: var(--pure-white); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 32px; box-shadow: var(--shadow-subtle);">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+              <h2 style="font-size: 1.45rem; color: var(--walnut-brown); margin: 0;">1. Delivery Address</h2>
+              <span style="font-size: 0.8rem; color: var(--primary-sage); font-weight: 700;"><i class="fa-solid fa-location-dot"></i> Pan-India Delivery</span>
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+              <div class="form-group">
+                <label class="form-label" for="ship-name">Full Name *</label>
+                <input type="text" id="ship-name" class="form-control" placeholder="Aditya Sharma" required>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="ship-phone">Mobile Number (+91) *</label>
+                <div style="position: relative;">
+                  <span style="position: absolute; left: 14px; top: 50%; transform: translateY(-50%); font-weight: 600; color: var(--muted-text); font-size: 0.9rem;">+91</span>
+                  <input type="tel" id="ship-phone" class="form-control" placeholder="98765 43210" maxlength="10" required style="padding-left: 48px;">
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="ship-email">Email Address (for Tax Invoice &amp; Updates) *</label>
+              <input type="email" id="ship-email" class="form-control" placeholder="aditya.sharma@example.com" required>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="ship-address">Flat, House no., Building, Apartment *</label>
+              <input type="text" id="ship-address" class="form-control" placeholder="Flat 402, Oakwood Residences" required>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="ship-address-2">Area, Street, Sector, Locality</label>
+              <input type="text" id="ship-address-2" class="form-control" placeholder="100 Feet Road, Indiranagar">
+            </div>
+
+            <div class="checkout-address-trio" style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px;">
+              <div class="form-group">
+                <label class="form-label" for="ship-zip">6-Digit PIN Code *</label>
+                <input type="text" id="ship-zip" class="form-control" placeholder="560001" maxlength="6" oninput="Checkout.handlePinInput(this.value)" required style="font-weight: 700;">
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="ship-city">City / District *</label>
+                <input type="text" id="ship-city" class="form-control" placeholder="Bengaluru" required>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="ship-state">State *</label>
+                <select id="ship-state" class="form-control" required style="padding: 10px;">
+                  <option value="Karnataka">Karnataka</option>
+                  <option value="Maharashtra">Maharashtra</option>
+                  <option value="Delhi">Delhi NCR</option>
+                  <option value="Tamil Nadu">Tamil Nadu</option>
+                  <option value="Telangana">Telangana</option>
+                  <option value="Gujarat">Gujarat</option>
+                  <option value="Rajasthan">Rajasthan</option>
+                  <option value="West Bengal">West Bengal</option>
+                  <option value="Kerala">Kerala</option>
+                  <option value="Uttar Pradesh">Uttar Pradesh</option>
+                  <option value="Haryana">Haryana</option>
+                  <option value="Punjab">Punjab</option>
+                  <option value="Other">Other State</option>
+                </select>
+              </div>
+            </div>
+            <div id="pin-validation-msg" style="margin-bottom: 14px;"></div>
+
+            <!-- Address Type selection (Flipkart style) -->
+            <div class="form-group">
+              <label class="form-label">Address Type:</label>
+              <div style="display: flex; gap: 20px;">
+                <label style="display: flex; align-items: center; gap: 8px; font-size: 0.9rem; cursor: pointer;">
+                  <input type="radio" name="address_type" value="Home" checked style="accent-color: var(--primary-sage);"> Home (All day delivery)
+                </label>
+                <label style="display: flex; align-items: center; gap: 8px; font-size: 0.9rem; cursor: pointer;">
+                  <input type="radio" name="address_type" value="Work" style="accent-color: var(--primary-sage);"> Work (Delivery between 10 AM - 6 PM)
+                </label>
+              </div>
+            </div>
+
+            <div style="margin-top: 24px; display: flex; justify-content: flex-end;">
+              <button type="button" class="btn btn-primary btn-lg" onclick="Checkout.goToStep(2)">
+                Deliver to this Address <i class="fa-solid fa-arrow-right"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- STEP 2: Delivery Speed & White Glove Placement -->
+          <div id="step-panel-2" class="checkout-step-panel" style="display: none; background: var(--pure-white); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 32px; box-shadow: var(--shadow-subtle);">
+            <h2 style="font-size: 1.45rem; color: var(--walnut-brown); margin-bottom: 20px;">2. Delivery Schedule &amp; Setup</h2>
+            
+            <div style="display: flex; flex-direction: column; gap: 14px; margin-bottom: 24px;">
+              <label style="display: flex; align-items: center; justify-content: space-between; padding: 18px 20px; border: 1.5px solid var(--primary-sage); background: var(--light-sage); border-radius: var(--radius-sm); cursor: pointer;">
+                <div style="display: flex; align-items: center; gap: 14px;">
+                  <input type="radio" name="shipping_speed" value="Standard Express Delivery" checked style="accent-color: var(--primary-sage);">
+                  <div>
+                    <strong style="color: var(--walnut-brown); font-size: 0.95rem;">Standard White-Glove Courier Delivery</strong>
+                    <div style="font-size: 0.8rem; color: var(--muted-text);">2 to 4 business days with room placement &amp; debris removal.</div>
+                  </div>
+                </div>
+                <strong style="color: var(--dark-sage);">COMPLIMENTARY</strong>
+              </label>
+
+              <label style="display: flex; align-items: center; justify-content: space-between; padding: 18px 20px; border: 1px solid var(--border-color); border-radius: var(--radius-sm); cursor: pointer;">
+                <div style="display: flex; align-items: center; gap: 14px;">
+                  <input type="radio" name="shipping_speed" value="Priority Next-Day Air" style="accent-color: var(--primary-sage);">
+                  <div>
+                    <strong style="color: var(--walnut-brown); font-size: 0.95rem;">Priority Next-Day Express Air</strong>
+                    <div style="font-size: 0.8rem; color: var(--muted-text);">Guaranteed next business day dispatch with priority slot.</div>
+                  </div>
+                </div>
+                <strong style="color: var(--walnut-brown);">₹499</strong>
+              </label>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="order-notes">Delivery &amp; Gate Access Instructions (Optional)</label>
+              <textarea id="order-notes" class="form-control" rows="2" placeholder="e.g. Leave with building security or call before arriving"></textarea>
+            </div>
+
+            <div style="display: flex; justify-content: space-between; margin-top: 24px;">
+              <button type="button" class="btn btn-outline" onclick="Checkout.goToStep(1)">
+                <i class="fa-solid fa-arrow-left"></i> Back to Address
+              </button>
+              <button type="button" class="btn btn-primary btn-lg" onclick="Checkout.goToStep(3)">
+                Continue to Payment <i class="fa-solid fa-arrow-right"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- STEP 3: Indian Payment Architecture (UPI, Cards, Net Banking, COD) -->
+          <div id="step-panel-3" class="checkout-step-panel" style="display: none; background: var(--pure-white); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 32px; box-shadow: var(--shadow-subtle);">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+              <h2 style="font-size: 1.45rem; color: var(--walnut-brown); margin: 0;">3. Payment Options</h2>
+              <span class="card-badge badge-department" style="font-size: 0.72rem;">Indian Rupee (INR)</span>
+            </div>
+
+            <!-- Payment Mode Selection Tabs -->
+            <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-bottom: 24px;">
+              <button type="button" id="pay-tab-upi" class="pay-method-tab active" onclick="Checkout.selectPaymentTab('upi')" style="padding: 12px; border: 1px solid var(--border-color); background: var(--warm-cream); border-radius: var(--radius-sm); font-weight: 600; font-size: 0.88rem; cursor: pointer; text-align: center;">
+                <i class="fa-solid fa-qrcode" style="display: block; font-size: 1.2rem; margin-bottom: 4px; color: var(--primary-sage);"></i> UPI
+              </button>
+              <button type="button" id="pay-tab-card" class="pay-method-tab" onclick="Checkout.selectPaymentTab('card')" style="padding: 12px; border: 1px solid var(--border-color); background: var(--pure-white); border-radius: var(--radius-sm); font-weight: 600; font-size: 0.88rem; cursor: pointer; text-align: center;">
+                <i class="fa-solid fa-credit-card" style="display: block; font-size: 1.2rem; margin-bottom: 4px; color: var(--walnut-brown);"></i> Card
+              </button>
+              <button type="button" id="pay-tab-netbanking" class="pay-method-tab" onclick="Checkout.selectPaymentTab('netbanking')" style="padding: 12px; border: 1px solid var(--border-color); background: var(--pure-white); border-radius: var(--radius-sm); font-weight: 600; font-size: 0.88rem; cursor: pointer; text-align: center;">
+                <i class="fa-solid fa-building-columns" style="display: block; font-size: 1.2rem; margin-bottom: 4px; color: var(--dark-sage);"></i> Net Banking
+              </button>
+              <button type="button" id="pay-tab-cod" class="pay-method-tab" onclick="Checkout.selectPaymentTab('cod')" style="padding: 12px; border: 1px solid var(--border-color); background: var(--pure-white); border-radius: var(--radius-sm); font-weight: 600; font-size: 0.88rem; cursor: pointer; text-align: center;">
+                <i class="fa-solid fa-hand-holding-dollar" style="display: block; font-size: 1.2rem; margin-bottom: 4px; color: var(--walnut-brown);"></i> COD
+              </button>
+            </div>
+
+            <!-- Panel 1: UPI -->
+            <div id="pay-subpanel-upi" class="pay-subpanel" style="display: block; padding: 20px; background: var(--warm-cream); border: 1px solid var(--border-color); border-radius: var(--radius-sm); margin-bottom: 24px;">
+              <label style="display: block; font-weight: 600; color: var(--walnut-brown); margin-bottom: 8px;">Instant UPI Transfer:</label>
+              <div style="display: flex; gap: 12px; margin-bottom: 16px;">
+                <label style="flex: 1; padding: 12px; background: var(--pure-white); border: 1px solid var(--border-color); border-radius: var(--radius-sm); display: flex; align-items: center; gap: 10px; cursor: pointer;">
+                  <input type="radio" name="payment_method" value="UPI - Google Pay" checked style="accent-color: var(--primary-sage);">
+                  <i class="fa-brands fa-google-pay" style="font-size: 1.5rem; color: #4285F4;"></i> Google Pay
+                </label>
+                <label style="flex: 1; padding: 12px; background: var(--pure-white); border: 1px solid var(--border-color); border-radius: var(--radius-sm); display: flex; align-items: center; gap: 10px; cursor: pointer;">
+                  <input type="radio" name="payment_method" value="UPI - PhonePe" style="accent-color: var(--primary-sage);">
+                  <strong style="color: #5f259f;">PhonePe</strong>
+                </label>
+                <label style="flex: 1; padding: 12px; background: var(--pure-white); border: 1px solid var(--border-color); border-radius: var(--radius-sm); display: flex; align-items: center; gap: 10px; cursor: pointer;">
+                  <input type="radio" name="payment_method" value="UPI - Paytm" style="accent-color: var(--primary-sage);">
+                  <strong style="color: #00b9f5;">Paytm</strong>
+                </label>
+              </div>
+
+              <div class="form-group" style="margin-bottom: 0;">
+                <label class="form-label" for="upi-id-input">Or Enter Your Virtual Payment Address (VPA / UPI ID):</label>
+                <input type="text" id="upi-id-input" class="form-control" placeholder="e.g. aditya@okhdfcbank" value="customer@okhdfcbank">
+                <span style="font-size: 0.78rem; color: var(--muted-text);">You will receive a payment request notification on your UPI app.</span>
+              </div>
+            </div>
+
+            <!-- Panel 2: Credit / Debit Cards -->
+            <div id="pay-subpanel-card" class="pay-subpanel" style="display: none; padding: 20px; background: var(--warm-cream); border: 1px solid var(--border-color); border-radius: var(--radius-sm); margin-bottom: 24px;">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+                <strong style="font-size: 0.9rem; color: var(--walnut-brown);">RuPay, Visa, Mastercard &amp; Amex</strong>
+                <button type="button" class="btn btn-secondary btn-sm" onclick="Checkout.fillTestCard()">Auto-Fill Test Card</button>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="pay-card-num">Card Number</label>
+                <input type="text" id="pay-card-num" class="form-control" placeholder="4532 •••• •••• 8824">
+              </div>
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px;">
+                <div class="form-group">
+                  <label class="form-label" for="pay-card-exp">Expiry (MM/YY)</label>
+                  <input type="text" id="pay-card-exp" class="form-control" placeholder="08/29">
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="pay-card-cvv">CVV</label>
+                  <input type="password" id="pay-card-cvv" class="form-control" placeholder="•••" maxlength="3">
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="pay-card-name">Cardholder Name</label>
+                <input type="text" id="pay-card-name" class="form-control" placeholder="Aditya Sharma">
+              </div>
+            </div>
+
+            <!-- Panel 3: Net Banking -->
+            <div id="pay-subpanel-netbanking" class="pay-subpanel" style="display: none; padding: 20px; background: var(--warm-cream); border: 1px solid var(--border-color); border-radius: var(--radius-sm); margin-bottom: 24px;">
+              <label class="form-label">Select Your Bank:</label>
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+                <label style="padding: 10px; background: var(--pure-white); border: 1px solid var(--border-color); border-radius: var(--radius-sm); display: flex; align-items: center; gap: 8px; cursor: pointer;">
+                  <input type="radio" name="payment_method" value="NetBanking - HDFC Bank"> HDFC Bank
+                </label>
+                <label style="padding: 10px; background: var(--pure-white); border: 1px solid var(--border-color); border-radius: var(--radius-sm); display: flex; align-items: center; gap: 8px; cursor: pointer;">
+                  <input type="radio" name="payment_method" value="NetBanking - ICICI Bank"> ICICI Bank
+                </label>
+                <label style="padding: 10px; background: var(--pure-white); border: 1px solid var(--border-color); border-radius: var(--radius-sm); display: flex; align-items: center; gap: 8px; cursor: pointer;">
+                  <input type="radio" name="payment_method" value="NetBanking - State Bank of India"> State Bank of India
+                </label>
+                <label style="padding: 10px; background: var(--pure-white); border: 1px solid var(--border-color); border-radius: var(--radius-sm); display: flex; align-items: center; gap: 8px; cursor: pointer;">
+                  <input type="radio" name="payment_method" value="NetBanking - Axis Bank"> Axis Bank
+                </label>
+              </div>
+            </div>
+
+            <!-- Panel 4: Cash on Delivery -->
+            <div id="pay-subpanel-cod" class="pay-subpanel" style="display: none; padding: 20px; background: var(--warm-cream); border: 1px solid var(--border-color); border-radius: var(--radius-sm); margin-bottom: 24px;">
+              <label style="display: flex; align-items: center; gap: 12px; cursor: pointer;">
+                <input type="radio" name="payment_method" value="Cash on Delivery (COD)">
+                <div>
+                  <strong style="color: var(--walnut-brown);">Cash on Delivery (COD) Available</strong>
+                  <p style="font-size: 0.82rem; color: var(--muted-text); margin-top: 4px;">Pay via Cash or QR code on delivery agent's POS machine upon delivery.</p>
+                </div>
+              </label>
+            </div>
+
+            <div style="display: flex; justify-content: space-between; margin-top: 24px;">
+              <button type="button" class="btn btn-outline" onclick="Checkout.goToStep(2)">
+                <i class="fa-solid fa-arrow-left"></i> Back to Schedule
+              </button>
+              <button type="button" id="btn-submit-order" class="btn btn-primary btn-lg" onclick="Checkout.submitOrder()">
+                <i class="fa-solid fa-lock"></i> Place Order &amp; Pay in INR
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Order Summary Sidebar -->
+        <div>
+          <div style="background: var(--warm-cream); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 24px; position: sticky; top: 100px;">
+            <h3 style="font-size: 1.25rem; color: var(--walnut-brown); margin-bottom: 16px; border-bottom: 1px solid var(--border-color); padding-bottom: 10px;">Bag Summary</h3>
+
+            <div id="checkout-items-summary" style="max-height: 240px; overflow-y: auto; margin-bottom: 18px;">
+              <!-- Populated via checkout.js -->
+            </div>
+
+            <div style="border-top: 1px solid var(--border-color); padding-top: 14px;">
+              <div style="display: flex; justify-content: space-between; margin-bottom: 10px; font-size: 0.92rem;">
+                <span style="color: var(--muted-text);">Price Subtotal</span>
+                <span id="co-subtotal" style="font-weight: 600;">₹0</span>
+              </div>
+
+              <div style="display: flex; justify-content: space-between; margin-bottom: 10px; font-size: 0.92rem; color: var(--dark-sage); font-weight: 600;">
+                <span>Coupon Savings</span>
+                <span id="co-discount">-₹0</span>
+              </div>
+
+              <div style="display: flex; justify-content: space-between; margin-bottom: 10px; font-size: 0.92rem;">
+                <span style="color: var(--muted-text);">White-Glove Delivery</span>
+                <span id="co-shipping" style="color: var(--success-color); font-weight: 600;">FREE</span>
+              </div>
+
+              <div style="display: flex; justify-content: space-between; margin-bottom: 14px; font-size: 0.85rem; color: var(--muted-text);">
+                <span>GST (18% inclusive)</span>
+                <span id="co-tax">₹0</span>
+              </div>
+
+              <div style="display: flex; justify-content: space-between; border-top: 1px solid var(--border-color); padding-top: 14px; margin-top: 10px; font-size: 1.3rem; font-weight: 700; color: var(--walnut-brown);">
+                <span>Total Amount</span>
+                <span id="co-total">₹0</span>
+              </div>
+            </div>
+
+            <div style="margin-top: 20px; font-size: 0.78rem; color: var(--muted-text); text-align: center;">
+              <i class="fa-solid fa-shield-halved" style="color: var(--primary-sage);"></i> 100% Genuine Guarantee &bull; 7-Day Replacement
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- Core Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/checkout.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      Checkout.init();
+    });
+  </script>
+</body>
+</html>

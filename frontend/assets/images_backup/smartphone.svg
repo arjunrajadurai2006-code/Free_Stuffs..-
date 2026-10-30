@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#FBF9F5"/><stop offset="100%" stop-color="#E2E7DE"/></linearGradient>
+    <linearGradient id="ti" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#A4A89E"/><stop offset="50%" stop-color="#D7DBD1"/><stop offset="100%" stop-color="#8B9184"/></linearGradient>
+    <linearGradient id="screen" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1A2E26"/><stop offset="50%" stop-color="#566B52"/><stop offset="100%" stop-color="#5B3928"/>
+    </linearGradient>
+    <filter id="drop" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="18" stdDeviation="22" flood-color="#292A26" flood-opacity="0.2"/>
+    </filter>
+  </defs>
+  <rect width="800" height="600" fill="url(#bg)"/>
+  <ellipse cx="400" cy="510" rx="200" ry="30" fill="#CAD2C5" opacity="0.6"/>
+
+  <g filter="url(#drop)" transform="translate(290, 80)">
+    <!-- Titanium Body -->
+    <rect x="0" y="0" width="220" height="420" rx="38" fill="url(#ti)"/>
+    <!-- Screen Bezel -->
+    <rect x="6" y="6" width="208" height="408" rx="34" fill="#0A0A0A"/>
+    <!-- Screen Glass Wallpaper -->
+    <rect x="10" y="10" width="200" height="400" rx="30" fill="url(#screen)"/>
+    <!-- Modern Graphic Overlay on screen -->
+    <circle cx="110" cy="180" r="70" fill="#879780" opacity="0.4"/>
+    <circle cx="140" cy="240" r="90" fill="#5B3928" opacity="0.3"/>
+    <!-- Dynamic Island Pill -->
+    <rect x="75" y="24" width="70" height="18" rx="9" fill="#000000"/>
+    <circle cx="132" cy="33" r="3.5" fill="#1C2738"/>
+    <!-- Lock Screen Clock -->
+    <text x="110" y="95" font-family="'DM Sans', sans-serif" font-weight="700" font-size="34" fill="#FFFFFF" text-anchor="middle">09:41</text>
+    <text x="110" y="120" font-family="'Inter', sans-serif" font-weight="500" font-size="12" fill="#E9EDE5" text-anchor="middle">Tuesday, October 27</text>
+    <!-- Bottom Home Bar -->
+    <rect x="70" y="392" width="80" height="4" rx="2" fill="#FFFFFF" opacity="0.8"/>
+  </g>
+  <text x="400" y="550" font-family="'DM Sans', sans-serif" font-weight="700" font-size="22" fill="#5B3928" text-anchor="middle">NOVA TITANIUM FLAGSHIP 5G</text>
+</svg>

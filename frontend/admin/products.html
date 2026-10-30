@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manage Products — NEST &amp; NOVA Admin</title>
+
+  <!-- Google Fonts & Font Awesome 6 Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Admin Stylesheets -->
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/admin.css">
+</head>
+<body>
+
+  <div class="admin-layout">
+    
+    <!-- Admin Sidebar -->
+    <aside class="admin-sidebar">
+      <div class="admin-sidebar-header">
+        <h2>NEST &amp; NOVA</h2>
+        <span>Administration</span>
+      </div>
+
+      <ul class="admin-nav-list">
+        <li class="admin-nav-item"><a href="index.html"><i class="fa-solid fa-chart-line"></i> Dashboard</a></li>
+        <li class="admin-nav-item active"><a href="products.html"><i class="fa-solid fa-box-archive"></i> Products Catalog</a></li>
+        <li class="admin-nav-item"><a href="orders.html"><i class="fa-solid fa-cart-flatbed"></i> Order Processing</a></li>
+        <li class="admin-nav-item"><a href="customers.html"><i class="fa-solid fa-users"></i> Customers</a></li>
+        <li class="admin-nav-item" style="margin-top: 30px;"><a href="../index.html" target="_blank"><i class="fa-solid fa-store"></i> View Storefront</a></li>
+        <li class="admin-nav-item"><a href="#" onclick="Auth.logout()"><i class="fa-solid fa-power-off"></i> Sign Out</a></li>
+      </ul>
+    </aside>
+
+    <!-- Main Wrapper -->
+    <div class="admin-main-wrapper">
+      
+      <!-- Top Bar -->
+      <div class="admin-topbar">
+        <div>
+          <h1 style="font-size: 1.3rem; color: var(--walnut-brown); margin: 0;">Catalog Management</h1>
+          <span style="font-size: 0.8rem; color: var(--muted-text);">Create, update inventory, and publish new collection pieces</span>
+        </div>
+
+        <button class="btn btn-primary btn-sm" onclick="Admin.openAddModal()">
+          <i class="fa-solid fa-plus"></i> Add New Product
+        </button>
+      </div>
+
+      <!-- Content Area -->
+      <div class="admin-content-area">
+        
+        <div class="data-card">
+          <div class="data-card-header">
+            <h3 style="font-size: 1.15rem; color: var(--walnut-brown); margin: 0;">All Catalog Products</h3>
+          </div>
+
+          <div style="overflow-x: auto;">
+            <table class="admin-table">
+              <thead>
+                <tr>
+                  <th>Image</th>
+                  <th>Product &amp; SKU</th>
+                  <th>Department</th>
+                  <th>Category</th>
+                  <th>Price</th>
+                  <th>Stock</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody id="admin-products-tbody">
+                <tr>
+                  <td colspan="7" style="text-align: center; padding: 30px;">Loading catalog...</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- Add / Edit Product Modal -->
+  <div id="product-modal" class="modal-overlay">
+    <div class="modal-content" style="max-width: 700px; padding: 32px;">
+      <button class="modal-close-btn" onclick="Admin.closeModal()"><i class="fa-solid fa-xmark"></i></button>
+      
+      <h2 id="modal-product-title" style="font-size: 1.5rem; color: var(--walnut-brown); margin-bottom: 20px;">Add New Collection Piece</h2>
+
+      <form id="product-form" onsubmit="Admin.handleProductFormSubmit(event)">
+        <input type="hidden" id="modal-product-id">
+
+        <div class="form-group">
+          <label class="form-label" for="prod-name">Product Name *</label>
+          <input type="text" id="prod-name" name="name" class="form-control" placeholder="e.g. Kyoto Solid Oak Low Platform Bed" required>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+          <div class="form-group">
+            <label class="form-label" for="prod-dept">Department *</label>
+            <select id="prod-dept" name="department" class="form-control" required>
+              <option value="electronics">Electronics</option>
+              <option value="furniture">Furniture</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="prod-category">Category *</label>
+            <select id="prod-category" name="category_id" class="form-control" required>
+              <option value="1">Smartphones</option>
+              <option value="2">Laptops</option>
+              <option value="3">Headphones</option>
+              <option value="4">Smart TVs</option>
+              <option value="5">Cameras</option>
+              <option value="6">Smartwatches</option>
+              <option value="7">Speakers</option>
+              <option value="8">Gaming</option>
+              <option value="9">Accessories</option>
+              <option value="10">Sofas</option>
+              <option value="11">Beds</option>
+              <option value="12">Chairs</option>
+              <option value="13">Tables</option>
+              <option value="14">Wardrobes</option>
+              <option value="15">Office Furniture</option>
+              <option value="16">Lighting</option>
+              <option value="17">Storage</option>
+              <option value="18">Home Decor</option>
+            </select>
+          </div>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px;">
+          <div class="form-group">
+            <label class="form-label" for="prod-price">Sale Price ($) *</label>
+            <input type="number" step="0.01" id="prod-price" name="price" class="form-control" placeholder="499.00" required>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="prod-original-price">Original Price ($)</label>
+            <input type="number" step="0.01" id="prod-original-price" name="original_price" class="form-control" placeholder="599.00">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="prod-stock">Stock Quantity *</label>
+            <input type="number" id="prod-stock" name="stock_quantity" class="form-control" placeholder="15" required>
+          </div>
+        </div>
+
+        <!-- Image Upload (Multer) & Image URL Fallback -->
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+          <div class="form-group">
+            <label class="form-label" for="prod-file">Upload Image File (Multer)</label>
+            <input type="file" id="prod-file" name="image" class="form-control" accept="image/png, image/jpeg, image/webp">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="prod-img-url">Or Image URL</label>
+            <input type="url" id="prod-img-url" name="image_url" class="form-control" placeholder="https://images.unsplash.com/...">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="prod-short-desc">Short Summary</label>
+          <input type="text" id="prod-short-desc" name="short_description" class="form-control" placeholder="Highlight primary benefit in one sentence">
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="prod-desc">Full Architectural Description</label>
+          <textarea id="prod-desc" name="description" class="form-control" rows="3" placeholder="Describe craftsmanship, acoustic fidelity, or joinery..."></textarea>
+        </div>
+
+        <div style="display: flex; justify-content: flex-end; gap: 12px; margin-top: 20px;">
+          <button type="button" class="btn btn-outline" onclick="Admin.closeModal()">Cancel</button>
+          <button type="submit" class="btn btn-primary">Save Product</button>
+        </div>
+      </form>
+
+    </div>
+  </div>
+
+  <!-- Core Scripts -->
+  <script src="../js/data.js"></script>
+  <script src="../js/api.js"></script>
+  <script src="../js/app.js"></script>
+  <script src="../js/auth.js"></script>
+  <script src="../js/admin.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      Admin.loadProducts();
+    });
+  </script>
+</body>
+</html>
+

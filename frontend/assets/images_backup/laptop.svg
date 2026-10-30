@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#F7F4EC"/><stop offset="100%" stop-color="#DFE5DB"/></linearGradient>
+    <linearGradient id="screen" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#2D3B31"/><stop offset="60%" stop-color="#566B52"/><stop offset="100%" stop-color="#879780"/></linearGradient>
+    <linearGradient id="chassis" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#D7DBD1"/><stop offset="100%" stop-color="#A5ABA0"/></linearGradient>
+    <filter id="drop" x="-10%" y="-10%" width="120%" height="130%"><feDropShadow dx="0" dy="16" stdDeviation="20" flood-color="#292A26" flood-opacity="0.18"/></filter>
+  </defs>
+  <rect width="800" height="600" fill="url(#bg)"/>
+  <ellipse cx="400" cy="480" rx="280" ry="32" fill="#C5CDC0" opacity="0.6"/>
+
+  <g filter="url(#drop)">
+    <!-- Lid / Screen Open -->
+    <rect x="180" y="110" width="440" height="280" rx="14" fill="url(#chassis)"/>
+    <rect x="194" y="124" width="412" height="252" rx="6" fill="#0D0E0D"/>
+    <rect x="200" y="130" width="400" height="240" rx="4" fill="url(#screen)"/>
+    <!-- Screen Content: Code / Creative Workspace Graphic -->
+    <circle cx="400" cy="250" r="60" fill="#E9EDE5" opacity="0.3"/>
+    <circle cx="440" cy="220" r="40" fill="#5B3928" opacity="0.3"/>
+    <text x="400" y="255" font-family="'DM Sans', sans-serif" font-weight="700" font-size="20" fill="#FFFFFF" text-anchor="middle" letter-spacing="2">NEST &amp; NOVA</text>
+    <circle cx="400" cy="117" r="3" fill="#3A4036"/>
+
+    <!-- Bottom Base / Keyboard Deck -->
+    <polygon points="120,440 680,440 640,390 160,390" fill="url(#chassis)"/>
+    <polygon points="164,432 636,432 610,396 190,396" fill="#1C1E1B"/>
+    <!-- Trackpad -->
+    <rect x="330" y="420" width="140" height="16" rx="3" fill="#BAC0B6" opacity="0.8"/>
+    <!-- Front Lip Notch -->
+    <rect x="375" y="438" width="50" height="4" rx="2" fill="#7E8578"/>
+  </g>
+  <text x="400" y="540" font-family="'DM Sans', sans-serif" font-weight="700" font-size="22" fill="#5B3928" text-anchor="middle">STARLIGHT PRO 16 ULTRABOOK</text>
+  <text x="400" y="565" font-family="'Inter', sans-serif" font-weight="500" font-size="14" fill="#77776F" text-anchor="middle">Liquid Retina XDR &bull; M-Series 22hr Battery</text>
+</svg>

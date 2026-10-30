@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#FBF9F5"/><stop offset="100%" stop-color="#E2E7DE"/></linearGradient>
+    <linearGradient id="brass" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#E2C48D"/><stop offset="50%" stop-color="#C29D59"/><stop offset="100%" stop-color="#8C6D2B"/></linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="24" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  </defs>
+  <rect width="800" height="600" fill="url(#bg)"/>
+  
+  <!-- Braided Cord -->
+  <line x1="400" y1="0" x2="400" y2="200" stroke="#77776F" stroke-width="4"/>
+  <rect x="390" y="190" width="20" height="24" rx="4" fill="url(#brass)"/>
+
+  <!-- Spun Brass Ring Halo -->
+  <circle cx="400" cy="300" r="140" fill="none" stroke="url(#brass)" stroke-width="22"/>
+
+  <!-- Frosted Opal Glass Glowing Orb -->
+  <circle cx="400" cy="300" r="85" fill="#FFFDF8" filter="url(#glow)"/>
+  <circle cx="400" cy="300" r="80" fill="#FFFBE8" opacity="0.9"/>
+
+  <text x="400" y="530" font-family="'DM Sans', sans-serif" font-weight="700" font-size="22" fill="#5B3928" text-anchor="middle">LUNE FROSTED GLASS &amp; BRASS PENDANT</text>
+  <text x="400" y="555" font-family="'Inter', sans-serif" font-weight="500" font-size="14" fill="#77776F" text-anchor="middle">Hand-Blown Opaline Orb &bull; Dimmable 2700K Warm Filament</text>
+</svg>

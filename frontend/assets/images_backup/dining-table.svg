@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#FBF9F5"/><stop offset="100%" stop-color="#E2E7DE"/></linearGradient>
+    <linearGradient id="walnut" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#6F4733"/><stop offset="40%" stop-color="#5B3928"/><stop offset="70%" stop-color="#4A2E20"/><stop offset="100%" stop-color="#38251C"/></linearGradient>
+    <filter id="drop" x="-10%" y="-10%" width="120%" height="130%"><feDropShadow dx="0" dy="16" stdDeviation="20" flood-color="#292A26" flood-opacity="0.2"/></filter>
+  </defs>
+  <rect width="800" height="600" fill="url(#bg)"/>
+  <ellipse cx="400" cy="480" rx="300" ry="30" fill="#C5CDC0" opacity="0.6"/>
+
+  <g filter="url(#drop)">
+    <!-- Heavy Industrial Steel Trestle Legs -->
+    <polygon points="200,280 230,280 200,450 170,450" fill="#20221E"/>
+    <polygon points="220,280 250,280 280,450 250,450" fill="#20221E"/>
+    <polygon points="560,280 590,280 560,450 530,450" fill="#20221E"/>
+    <polygon points="580,280 610,280 640,450 610,450" fill="#20221E"/>
+
+    <!-- Continuous Live-Edge Walnut Slab Tabletop -->
+    <path d="M 120 250 C 240 240, 560 240, 680 250 C 690 270, 675 285, 665 285 C 540 280, 260 280, 135 285 C 120 285, 110 270, 120 250 Z" fill="url(#walnut)"/>
+    <!-- Butterfly Key Joinery Accents -->
+    <polygon points="280,256 288,264 280,272 272,264" fill="#C29D59"/>
+    <polygon points="520,256 528,264 520,272 512,264" fill="#C29D59"/>
+  </g>
+  <text x="400" y="530" font-family="'DM Sans', sans-serif" font-weight="700" font-size="22" fill="#5B3928" text-anchor="middle">SOLSTICE LIVE-EDGE SOLID WALNUT TABLE</text>
+  <text x="400" y="555" font-family="'Inter', sans-serif" font-weight="500" font-size="14" fill="#77776F" text-anchor="middle">Continuous 1.75" American Slab &bull; Butterfly Key Joinery</text>
+</svg>

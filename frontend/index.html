@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NEST &amp; NOVA — Smart Technology. Timeless Living. | India's Premium Marketplace</title>
+  <meta name="description" content="Discover flagship smartphones, M-series ultrabooks, acoustic hi-fi sound, and artisanal solid wood furniture tailored for modern Indian homes.">
+
+  <!-- Google Fonts & Font Awesome 6 Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Core Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <!-- Minimal 3-Stage Entrance Animation (Short, Skippable, Plays once per session) -->
+  <div id="landing-intro-overlay">
+    <button class="intro-skip-btn" id="intro-skip-btn">Skip Intro &rarr;</button>
+    <div class="intro-anim-container">
+      <div class="intro-brand-symbol">
+        <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path class="intro-house-path" d="M20 52L50 24L80 52V82H20V52Z" stroke="#879780" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <path class="intro-house-path" d="M40 82V58H60V82" stroke="#5B3928" stroke-width="3" stroke-linecap="round"/>
+          <circle cx="50" cy="40" r="4" fill="#879780"/>
+        </svg>
+      </div>
+      <div class="intro-title">NEST &amp; NOVA</div>
+      <div class="intro-tagline">Smart Technology. Timeless Living.</div>
+    </div>
+  </div>
+
+  <!-- 1. Announcement Bar (Indian Offers & Delivery) -->
+  <div class="announcement-bar">
+    <span class="badge-promo">Complimentary Delivery</span>
+    <span>Complimentary White-Glove Delivery on orders above ₹4,999 &bull; Use code <strong>WELCOME10</strong> for 10% privilege &bull; Pan-India Serviceability</span>
+  </div>
+
+  <!-- 2. Sticky Navigation Bar with Department Switcher -->
+  <header class="site-header">
+    <div class="header-container">
+      <a href="index.html" class="brand-logo">
+        <span class="logo-title">NEST &amp; NOVA</span>
+        <span class="logo-subtitle">Smart Technology. Timeless Living.</span>
+      </a>
+
+      <!-- Flipkart-Inspired Prominent Department Switcher -->
+      <div class="dept-switcher-bar">
+        <a href="electronics.html" class="dept-pill-btn" title="Shop Electronics Department">
+          <i class="fa-solid fa-microchip"></i> Electronics
+        </a>
+        <a href="furniture.html" class="dept-pill-btn" title="Shop Furniture Department">
+          <i class="fa-solid fa-couch"></i> Furniture
+        </a>
+      </div>
+
+      <nav class="main-nav">
+        <a href="index.html" class="nav-link active">Home</a>
+        <a href="electronics.html" class="nav-link">Electronics</a>
+        <a href="furniture.html" class="nav-link">Furniture</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="header-actions">
+        <!-- Search Trigger -->
+        <a href="search.html" class="action-btn" title="Search Catalog Across India">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </a>
+
+        <!-- Account / Sign In -->
+        <a href="login.html" class="action-btn account-nav-link" title="Customer Account">
+          <i class="fa-regular fa-user"></i>
+        </a>
+
+        <!-- Wishlist -->
+        <a href="wishlist.html" class="action-btn" title="Wishlist">
+          <i class="fa-regular fa-heart"></i>
+          <span class="badge-counter wishlist-counter" style="display: none;">0</span>
+        </a>
+
+        <!-- Cart with live counter -->
+        <a href="cart.html" class="action-btn" title="Shopping Bag">
+          <i class="fa-solid fa-bag-shopping"></i>
+          <span class="badge-counter cart-counter" style="display: none;">0</span>
+        </a>
+
+        <!-- Mobile Menu Toggle -->
+        <button class="mobile-menu-toggle" aria-label="Toggle Navigation">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- 3. Split-Layout Hero Section -->
+    <section class="hero-section">
+      <div class="container">
+        <div class="hero-grid">
+          <div class="hero-content">
+            <div class="hero-tagline">
+              <i class="fa-solid fa-seedling"></i> Harmonious Living Redefined
+            </div>
+            <h1 class="hero-title">
+              Better Technology. <span>Better Living.</span>
+            </h1>
+            <p class="hero-subtitle">
+              Discover everyday technology and timeless furniture, thoughtfully selected for modern Indian homes. Studio-grade acoustics, tactile computing, and sustainable organic timber.
+            </p>
+            <div class="hero-cta-group">
+              <a href="electronics.html" class="btn btn-primary btn-lg">
+                <i class="fa-solid fa-microchip"></i> Explore Electronics
+              </a>
+              <a href="furniture.html" class="btn btn-secondary btn-lg">
+                <i class="fa-solid fa-couch"></i> Discover Furniture
+              </a>
+            </div>
+          </div>
+
+          <div class="hero-media-wrapper">
+            <img src="assets/images/hero-lifestyle.svg" alt="Nest and Nova integrated workspace combining laptop, audio and walnut desk" onerror="this.onerror=null; this.src='assets/images/hero-lifestyle.svg';">
+            <div class="hero-floating-pill">
+              <i class="fa-solid fa-award"></i>
+              <div class="pill-text">
+                <strong>Crafted for Indian Homes</strong>
+                <span>Solid Timber &bull; Hi-Res Audio &bull; Pan-India Service</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. TWO LARGE VISUALLY DISTINCT DEPARTMENT CARDS -->
+    <section class="section" style="padding-top: 20px;">
+      <div class="container">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 28px;">
+          
+          <!-- Electronics Department Card -->
+          <div class="department-card-hero" style="background: linear-gradient(135deg, #FAF8F2 0%, var(--warm-cream) 100%); border: 1.5px solid var(--border-color); border-radius: var(--radius-lg); padding: 36px; display: flex; flex-direction: column; justify-content: space-between; position: relative; overflow: hidden; box-shadow: var(--shadow-subtle);">
+            <div>
+              <span class="card-badge badge-department" style="margin-bottom: 14px; display: inline-block;">Flagship Electronics</span>
+              <h3 style="font-size: 1.9rem; color: var(--walnut-brown); margin-bottom: 8px;">Personal Tech &amp; Smart Home</h3>
+              <p style="font-size: 0.95rem; color: var(--muted-text); line-height: 1.6; margin-bottom: 24px;">
+                M-series laptops, studio headphones, 4K OLED cinema TVs, and MagSafe charging stations engineered for peak performance.
+              </p>
+            </div>
+            <div>
+              <div style="display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 24px; font-size: 0.85rem; color: var(--walnut-brown); font-weight: 600;">
+                <span><i class="fa-solid fa-mobile-screen"></i> Smartphones</span> &bull;
+                <span><i class="fa-solid fa-laptop"></i> Ultrabooks</span> &bull;
+                <span><i class="fa-solid fa-headphones"></i> Studio Audio</span> &bull;
+                <span><i class="fa-solid fa-tv"></i> OLED TVs</span>
+              </div>
+              <a href="electronics.html" class="btn btn-primary">
+                Shop Electronics <i class="fa-solid fa-arrow-right" style="margin-left: 6px;"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Furniture Department Card -->
+          <div class="department-card-hero" style="background: linear-gradient(135deg, #F5F7F3 0%, var(--light-sage) 100%); border: 1.5px solid var(--border-color); border-radius: var(--radius-lg); padding: 36px; display: flex; flex-direction: column; justify-content: space-between; position: relative; overflow: hidden; box-shadow: var(--shadow-subtle);">
+            <div>
+              <span class="card-badge" style="background: var(--walnut-brown); color: var(--pure-white); margin-bottom: 14px; display: inline-block;">Artisanal Furniture</span>
+              <h3 style="font-size: 1.9rem; color: var(--walnut-brown); margin-bottom: 8px;">Living, Bedroom &amp; Workspace</h3>
+              <p style="font-size: 0.95rem; color: var(--muted-text); line-height: 1.6; margin-bottom: 24px;">
+                French tactile bouclé sofas, solid oak platform beds, Roman travertine tables, and motorized walnut standing desks.
+              </p>
+            </div>
+            <div>
+              <div style="display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 24px; font-size: 0.85rem; color: var(--walnut-brown); font-weight: 600;">
+                <span><i class="fa-solid fa-couch"></i> Bouclé Sofas</span> &bull;
+                <span><i class="fa-solid fa-bed"></i> Oak Beds</span> &bull;
+                <span><i class="fa-solid fa-desktop"></i> Desks</span> &bull;
+                <span><i class="fa-solid fa-table"></i> Travertine</span>
+              </div>
+              <a href="furniture.html" class="btn btn-secondary">
+                Shop Furniture <i class="fa-solid fa-arrow-right" style="margin-left: 6px;"></i>
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. Featured Category Cards with Recognizable Icons -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-pretitle">Shop By Category</span>
+          <h2 class="section-title">Designed for Work, Rest &amp; Focus</h2>
+          <p class="section-desc">Explore our icon-curated collections across personal technology and interior design.</p>
+        </div>
+
+        <div class="category-grid" id="homepage-category-grid">
+          <a href="electronics.html?category=smartphones" class="category-card">
+            <div class="category-icon-box"><i class="fa-solid fa-mobile-screen-button"></i></div>
+            <span class="category-name">Smartphones</span>
+          </a>
+          <a href="electronics.html?category=laptops" class="category-card">
+            <div class="category-icon-box"><i class="fa-solid fa-laptop"></i></div>
+            <span class="category-name">Laptops</span>
+          </a>
+          <a href="electronics.html?category=headphones" class="category-card">
+            <div class="category-icon-box"><i class="fa-solid fa-headphones"></i></div>
+            <span class="category-name">Headphones</span>
+          </a>
+          <a href="electronics.html?category=smart-tvs" class="category-card">
+            <div class="category-icon-box"><i class="fa-solid fa-tv"></i></div>
+            <span class="category-name">Smart TVs</span>
+          </a>
+          <a href="electronics.html?category=speakers" class="category-card">
+            <div class="category-icon-box"><i class="fa-solid fa-volume-high"></i></div>
+            <span class="category-name">Speakers</span>
+          </a>
+          <a href="furniture.html?category=sofas" class="category-card">
+            <div class="category-icon-box"><i class="fa-solid fa-couch"></i></div>
+            <span class="category-name">Sofas</span>
+          </a>
+          <a href="furniture.html?category=beds" class="category-card">
+            <div class="category-icon-box"><i class="fa-solid fa-bed"></i></div>
+            <span class="category-name">Beds</span>
+          </a>
+          <a href="furniture.html?category=chairs" class="category-card">
+            <div class="category-icon-box"><i class="fa-solid fa-chair"></i></div>
+            <span class="category-name">Chairs</span>
+          </a>
+          <a href="furniture.html?category=tables" class="category-card">
+            <div class="category-icon-box"><i class="fa-solid fa-table"></i></div>
+            <span class="category-name">Tables</span>
+          </a>
+          <a href="furniture.html?category=office-furniture" class="category-card">
+            <div class="category-icon-box"><i class="fa-solid fa-desktop"></i></div>
+            <span class="category-name">Workspaces</span>
+          </a>
+          <a href="furniture.html?category=lighting" class="category-card">
+            <div class="category-icon-box"><i class="fa-solid fa-lightbulb"></i></div>
+            <span class="category-name">Lighting</span>
+          </a>
+          <a href="furniture.html?category=home-decor" class="category-card">
+            <div class="category-icon-box"><i class="fa-solid fa-house"></i></div>
+            <span class="category-name">Decor</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. Trending Electronics Collection (Prices in INR) -->
+    <section class="section section-light">
+      <div class="container">
+        <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 40px; flex-wrap: wrap; gap: 16px;">
+          <div>
+            <span class="section-pretitle">High-Fidelity Hardware</span>
+            <h2 class="section-title" style="margin-bottom: 0;">Trending Electronics</h2>
+          </div>
+          <a href="electronics.html" class="btn btn-outline-sage">
+            View All Electronics <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+
+        <div class="product-grid" id="trending-electronics-grid">
+          <!-- Featured Initial Electronics Cards in INR -->
+          <div class="product-card" data-product-id="1">
+            <div class="card-media-wrapper">
+              <img src="assets/images/headphone.jpg" alt="Aura ANC Wireless Studio Headphones" loading="lazy" onerror="this.onerror=null; this.src='assets/images/headphones.svg';">
+              <div class="card-badges">
+                <span class="card-badge badge-discount">-14%</span>
+                <span class="card-badge badge-department">electronics</span>
+              </div>
+              <button class="card-action-wishlist" title="Save to Wishlist" onclick="event.stopPropagation(); Wishlist.toggle(1, 'Aura ANC Wireless Studio Headphones');">
+                <i class="fa-regular fa-heart"></i>
+              </button>
+              <button class="card-quick-view-btn" onclick="event.stopPropagation(); openQuickView(1)">
+                <i class="fa-solid fa-eye"></i> Quick View
+              </button>
+            </div>
+            <div class="card-body">
+              <div class="card-brand">Bose</div>
+              <a href="product.html?id=1" class="card-title">Aura ANC Wireless Studio Headphones</a>
+              <div class="card-rating-wrap">
+                <span class="star-icons"><i class="fa-solid fa-star"></i></span>
+                <strong>4.9</strong> <span>(148)</span>
+              </div>
+              <span class="card-stock-status"><i class="fa-solid fa-circle-check"></i> In Stock</span>
+              <div class="card-price-row">
+                <span class="current-price">₹24,999</span>
+                <span class="original-price">₹28,999</span>
+              </div>
+              <div style="font-size: 0.76rem; color: var(--dark-sage); font-weight: 600; margin-bottom: 12px;">
+                EMI from ₹2,083/mo
+              </div>
+              <div style="display: flex; gap: 8px;">
+                <button class="card-btn-cart" style="flex: 1;" onclick="Cart.add(1, null, 1, {name: 'Aura ANC Wireless Studio Headphones'})">
+                  <i class="fa-solid fa-cart-shopping"></i> Add to Bag
+                </button>
+                <button class="card-btn-compare" title="Compare specs" onclick="CompareEngine.toggle(1, 'Aura ANC Headphones')">
+                  <i class="fa-solid fa-code-compare"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="product-card" data-product-id="2">
+            <div class="card-media-wrapper">
+              <img src="assets/images/smartphone.jpg" alt="Nova Titanium Flagship 5G Smartphone" loading="lazy" onerror="this.onerror=null; this.src='assets/images/smartphone.svg';">
+              <div class="card-badges">
+                <span class="card-badge badge-discount">-11%</span>
+                <span class="card-badge badge-department">electronics</span>
+              </div>
+              <button class="card-action-wishlist" title="Save to Wishlist" onclick="event.stopPropagation(); Wishlist.toggle(2, 'Nova Titanium Flagship 5G Smartphone');">
+                <i class="fa-regular fa-heart"></i>
+              </button>
+              <button class="card-quick-view-btn" onclick="event.stopPropagation(); openQuickView(2)">
+                <i class="fa-solid fa-eye"></i> Quick View
+              </button>
+            </div>
+            <div class="card-body">
+              <div class="card-brand">Apple</div>
+              <a href="product.html?id=2" class="card-title">Nova Titanium Flagship 5G Smartphone</a>
+              <div class="card-rating-wrap">
+                <span class="star-icons"><i class="fa-solid fa-star"></i></span>
+                <strong>5.0</strong> <span>(320)</span>
+              </div>
+              <span class="card-stock-status"><i class="fa-solid fa-circle-check"></i> In Stock</span>
+              <div class="card-price-row">
+                <span class="current-price">₹79,999</span>
+                <span class="original-price">₹89,999</span>
+              </div>
+              <div style="font-size: 0.76rem; color: var(--dark-sage); font-weight: 600; margin-bottom: 12px;">
+                EMI from ₹6,666/mo
+              </div>
+              <div style="display: flex; gap: 8px;">
+                <button class="card-btn-cart" style="flex: 1;" onclick="Cart.add(2, null, 1, {name: 'Nova Titanium Flagship 5G Smartphone'})">
+                  <i class="fa-solid fa-cart-shopping"></i> Add to Bag
+                </button>
+                <button class="card-btn-compare" title="Compare specs" onclick="CompareEngine.toggle(2, 'Nova Titanium 5G')">
+                  <i class="fa-solid fa-code-compare"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="product-card" data-product-id="3">
+            <div class="card-media-wrapper">
+              <img src="assets/images/laptop.jpg" alt="Starlight Pro 16 Ultrabook" loading="lazy" onerror="this.onerror=null; this.src='assets/images/laptop.svg';">
+              <div class="card-badges">
+                <span class="card-badge badge-discount">-11%</span>
+                <span class="card-badge badge-department">electronics</span>
+              </div>
+              <button class="card-action-wishlist" title="Save to Wishlist" onclick="event.stopPropagation(); Wishlist.toggle(3, 'Starlight Pro 16 Ultrabook');">
+                <i class="fa-regular fa-heart"></i>
+              </button>
+              <button class="card-quick-view-btn" onclick="event.stopPropagation(); openQuickView(3)">
+                <i class="fa-solid fa-eye"></i> Quick View
+              </button>
+            </div>
+            <div class="card-body">
+              <div class="card-brand">Apple</div>
+              <a href="product.html?id=3" class="card-title">Starlight Pro 16 Ultrabook</a>
+              <div class="card-rating-wrap">
+                <span class="star-icons"><i class="fa-solid fa-star"></i></span>
+                <strong>4.9</strong> <span>(112)</span>
+              </div>
+              <span class="card-stock-status"><i class="fa-solid fa-circle-check"></i> In Stock</span>
+              <div class="card-price-row">
+                <span class="current-price">₹1,59,999</span>
+                <span class="original-price">₹1,79,999</span>
+              </div>
+              <div style="font-size: 0.76rem; color: var(--dark-sage); font-weight: 600; margin-bottom: 12px;">
+                EMI from ₹13,333/mo
+              </div>
+              <div style="display: flex; gap: 8px;">
+                <button class="card-btn-cart" style="flex: 1;" onclick="Cart.add(3, null, 1, {name: 'Starlight Pro 16 Ultrabook'})">
+                  <i class="fa-solid fa-cart-shopping"></i> Add to Bag
+                </button>
+                <button class="card-btn-compare" title="Compare specs" onclick="CompareEngine.toggle(3, 'Starlight Pro 16')">
+                  <i class="fa-solid fa-code-compare"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="product-card" data-product-id="4">
+            <div class="card-media-wrapper">
+              <img src="assets/images/tv.jpg" alt="Horizon 65 OLED TV" loading="lazy" onerror="this.onerror=null; this.src='assets/images/tv.svg';">
+              <div class="card-badges">
+                <span class="card-badge badge-discount">-13%</span>
+                <span class="card-badge badge-department">electronics</span>
+              </div>
+              <button class="card-action-wishlist" title="Save to Wishlist" onclick="event.stopPropagation(); Wishlist.toggle(4, 'Horizon 65 OLED TV');">
+                <i class="fa-regular fa-heart"></i>
+              </button>
+              <button class="card-quick-view-btn" onclick="event.stopPropagation(); openQuickView(4)">
+                <i class="fa-solid fa-eye"></i> Quick View
+              </button>
+            </div>
+            <div class="card-body">
+              <div class="card-brand">Samsung</div>
+              <a href="product.html?id=4" class="card-title">Horizon 65" 4K OLED Ambient Smart TV</a>
+              <div class="card-rating-wrap">
+                <span class="star-icons"><i class="fa-solid fa-star"></i></span>
+                <strong>4.8</strong> <span>(64)</span>
+              </div>
+              <span class="card-stock-status"><i class="fa-solid fa-circle-check"></i> In Stock</span>
+              <div class="card-price-row">
+                <span class="current-price">₹1,39,999</span>
+                <span class="original-price">₹1,59,999</span>
+              </div>
+              <div style="font-size: 0.76rem; color: var(--dark-sage); font-weight: 600; margin-bottom: 12px;">
+                EMI from ₹11,666/mo
+              </div>
+              <div style="display: flex; gap: 8px;">
+                <button class="card-btn-cart" style="flex: 1;" onclick="Cart.add(4, null, 1, {name: 'Horizon 65 OLED TV'})">
+                  <i class="fa-solid fa-cart-shopping"></i> Add to Bag
+                </button>
+                <button class="card-btn-compare" title="Compare specs" onclick="CompareEngine.toggle(4, 'Horizon 65 OLED TV')">
+                  <i class="fa-solid fa-code-compare"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. Best-Selling Furniture Collection (Prices in INR) -->
+    <section class="section">
+      <div class="container">
+        <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 40px; flex-wrap: wrap; gap: 16px;">
+          <div>
+            <span class="section-pretitle">Artisanal Living</span>
+            <h2 class="section-title" style="margin-bottom: 0;">Best-Selling Furniture</h2>
+          </div>
+          <a href="furniture.html" class="btn btn-outline-sage">
+            View All Furniture <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+
+        <div class="product-grid" id="bestselling-furniture-grid">
+          <!-- Featured Initial Furniture Cards in INR -->
+          <div class="product-card" data-product-id="10">
+            <div class="card-media-wrapper">
+              <img src="assets/images/sofa.jpg" onerror="this.onerror=null; this.src='assets/images/sofa.svg';" alt="Koto 3-Piece Modular Bouclé Chaise Sofa" loading="lazy">
+              <div class="card-badges">
+                <span class="card-badge badge-discount">-14%</span>
+                <span class="card-badge badge-department">furniture</span>
+              </div>
+              <button class="card-action-wishlist" title="Save to Wishlist" onclick="event.stopPropagation(); Wishlist.toggle(10, 'Koto 3-Piece Modular Bouclé Sofa');">
+                <i class="fa-regular fa-heart"></i>
+              </button>
+              <button class="card-quick-view-btn" onclick="event.stopPropagation(); openQuickView(10)">
+                <i class="fa-solid fa-eye"></i> Quick View
+              </button>
+            </div>
+            <div class="card-body">
+              <div class="card-brand">Muuto</div>
+              <a href="product.html?id=10" class="card-title">Koto 3-Piece Modular Bouclé Chaise Sofa</a>
+              <div class="card-rating-wrap">
+                <span class="star-icons"><i class="fa-solid fa-star"></i></span>
+                <strong>4.9</strong> <span>(92)</span>
+              </div>
+              <span class="card-stock-status"><i class="fa-solid fa-circle-check"></i> In Stock</span>
+              <div class="card-price-row">
+                <span class="current-price">₹89,999</span>
+                <span class="original-price">₹1,04,999</span>
+              </div>
+              <div style="font-size: 0.76rem; color: var(--dark-sage); font-weight: 600; margin-bottom: 12px;">
+                EMI from ₹7,499/mo &bull; Free In-Room Assembly
+              </div>
+              <button class="card-btn-cart" onclick="Cart.add(10, null, 1, {name: 'Koto 3-Piece Modular Bouclé Sofa'})">
+                <i class="fa-solid fa-cart-shopping"></i> Add to Bag
+              </button>
+            </div>
+          </div>
+
+          <div class="product-card" data-product-id="11">
+            <div class="card-media-wrapper">
+              <img src="assets/images/bed.jpg" onerror="this.onerror=null; this.src='assets/images/bed.svg';" alt="Nara Solid Oak Low Platform Bed Frame" loading="lazy">
+              <div class="card-badges">
+                <span class="card-badge badge-discount">-13%</span>
+                <span class="card-badge badge-department">furniture</span>
+              </div>
+              <button class="card-action-wishlist" title="Save to Wishlist" onclick="event.stopPropagation(); Wishlist.toggle(11, 'Nara Solid Oak Platform Bed');">
+                <i class="fa-regular fa-heart"></i>
+              </button>
+              <button class="card-quick-view-btn" onclick="event.stopPropagation(); openQuickView(11)">
+                <i class="fa-solid fa-eye"></i> Quick View
+              </button>
+            </div>
+            <div class="card-body">
+              <div class="card-brand">Hay Design</div>
+              <a href="product.html?id=11" class="card-title">Nara Solid Oak Low Platform Bed Frame</a>
+              <div class="card-rating-wrap">
+                <span class="star-icons"><i class="fa-solid fa-star"></i></span>
+                <strong>4.9</strong> <span>(68)</span>
+              </div>
+              <span class="card-stock-status"><i class="fa-solid fa-circle-check"></i> In Stock</span>
+              <div class="card-price-row">
+                <span class="current-price">₹64,999</span>
+                <span class="original-price">₹74,999</span>
+              </div>
+              <div style="font-size: 0.76rem; color: var(--dark-sage); font-weight: 600; margin-bottom: 12px;">
+                EMI from ₹5,416/mo &bull; Tool-Free Joinery
+              </div>
+              <button class="card-btn-cart" onclick="Cart.add(11, null, 1, {name: 'Nara Solid Oak Platform Bed'})">
+                <i class="fa-solid fa-cart-shopping"></i> Add to Bag
+              </button>
+            </div>
+          </div>
+
+          <div class="product-card" data-product-id="15">
+            <div class="card-media-wrapper">
+              <img src="assets/images/desk.jpg" onerror="this.onerror=null; this.src='assets/images/desk.svg';" alt="Strata Motorized Solid Walnut Standing Desk" loading="lazy">
+              <div class="card-badges">
+                <span class="card-badge badge-discount">-14%</span>
+                <span class="card-badge badge-department">furniture</span>
+              </div>
+              <button class="card-action-wishlist" title="Save to Wishlist" onclick="event.stopPropagation(); Wishlist.toggle(15, 'Strata Motorized Standing Desk');">
+                <i class="fa-regular fa-heart"></i>
+              </button>
+              <button class="card-quick-view-btn" onclick="event.stopPropagation(); openQuickView(15)">
+                <i class="fa-solid fa-eye"></i> Quick View
+              </button>
+            </div>
+            <div class="card-body">
+              <div class="card-brand">Herman Miller</div>
+              <a href="product.html?id=15" class="card-title">Strata Motorized Solid Walnut Standing Desk</a>
+              <div class="card-rating-wrap">
+                <span class="star-icons"><i class="fa-solid fa-star"></i></span>
+                <strong>5.0</strong> <span>(142)</span>
+              </div>
+              <span class="card-stock-status"><i class="fa-solid fa-circle-check"></i> In Stock</span>
+              <div class="card-price-row">
+                <span class="current-price">₹48,999</span>
+                <span class="original-price">₹56,999</span>
+              </div>
+              <div style="font-size: 0.76rem; color: var(--dark-sage); font-weight: 600; margin-bottom: 12px;">
+                EMI from ₹4,083/mo &bull; Dual Whisper Lift
+              </div>
+              <button class="card-btn-cart" onclick="Cart.add(15, null, 1, {name: 'Strata Motorized Standing Desk'})">
+                <i class="fa-solid fa-cart-shopping"></i> Add to Bag
+              </button>
+            </div>
+          </div>
+
+          <div class="product-card" data-product-id="13">
+            <div class="card-media-wrapper">
+              <img src="assets/images/diningtable.jpg" onerror="this.onerror=null; this.src='assets/images/dining-table.svg';" alt="Solstice Live-Edge Solid Walnut Dining Table" loading="lazy">
+              <div class="card-badges">
+                <span class="card-badge badge-discount">-14%</span>
+                <span class="card-badge badge-department">furniture</span>
+              </div>
+              <button class="card-action-wishlist" title="Save to Wishlist" onclick="event.stopPropagation(); Wishlist.toggle(13, 'Solstice Live Edge Dining Table');">
+                <i class="fa-regular fa-heart"></i>
+              </button>
+              <button class="card-quick-view-btn" onclick="event.stopPropagation(); openQuickView(13)">
+                <i class="fa-solid fa-eye"></i> Quick View
+              </button>
+            </div>
+            <div class="card-body">
+              <div class="card-brand">West Elm</div>
+              <a href="product.html?id=13" class="card-title">Solstice Live-Edge Solid Walnut Dining Table</a>
+              <div class="card-rating-wrap">
+                <span class="star-icons"><i class="fa-solid fa-star"></i></span>
+                <strong>4.9</strong> <span>(48)</span>
+              </div>
+              <span class="card-stock-status"><i class="fa-solid fa-circle-check"></i> In Stock</span>
+              <div class="card-price-row">
+                <span class="current-price">₹79,999</span>
+                <span class="original-price">₹92,999</span>
+              </div>
+              <div style="font-size: 0.76rem; color: var(--dark-sage); font-weight: 600; margin-bottom: 12px;">
+                EMI from ₹6,666/mo &bull; Seats 8-10
+              </div>
+              <button class="card-btn-cart" onclick="Cart.add(13, null, 1, {name: 'Solstice Live Edge Dining Table'})">
+                <i class="fa-solid fa-cart-shopping"></i> Add to Bag
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 9. Indian Trust & Service Assurance -->
+    <section class="section section-light">
+      <div class="container">
+        <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; text-align: center;">
+          <div style="padding: 24px; background: var(--pure-white); border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+            <div style="font-size: 2rem; color: var(--dark-sage); margin-bottom: 12px;"><i class="fa-solid fa-truck-fast"></i></div>
+            <h4 style="font-size: 1.1rem; color: var(--walnut-brown); margin-bottom: 6px;">White-Glove Delivery</h4>
+            <p style="font-size: 0.85rem; color: var(--muted-text);">Free Pan-India shipping on orders over ₹4,999 with in-room assembly technicians.</p>
+          </div>
+
+          <div style="padding: 24px; background: var(--pure-white); border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+            <div style="font-size: 2rem; color: var(--dark-sage); margin-bottom: 12px;"><i class="fa-solid fa-indian-rupee-sign"></i></div>
+            <h4 style="font-size: 1.1rem; color: var(--walnut-brown); margin-bottom: 6px;">Flexible Payment</h4>
+            <p style="font-size: 0.85rem; color: var(--muted-text);">Instant UPI (GPay, PhonePe, Paytm), RuPay Cards, No-Cost EMI, and Cash on Delivery.</p>
+          </div>
+
+          <div style="padding: 24px; background: var(--pure-white); border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+            <div style="font-size: 2rem; color: var(--dark-sage); margin-bottom: 12px;"><i class="fa-solid fa-shield-halved"></i></div>
+            <h4 style="font-size: 1.1rem; color: var(--walnut-brown); margin-bottom: 6px;">100% Genuine Certified</h4>
+            <p style="font-size: 0.85rem; color: var(--muted-text);">Direct manufacturer warranty on all electronics and 10-year structural warranty on timber.</p>
+          </div>
+
+          <div style="padding: 24px; background: var(--pure-white); border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+            <div style="font-size: 2rem; color: var(--dark-sage); margin-bottom: 12px;"><i class="fa-solid fa-headset"></i></div>
+            <h4 style="font-size: 1.1rem; color: var(--walnut-brown); margin-bottom: 6px;">Dedicated Concierge</h4>
+            <p style="font-size: 0.85rem; color: var(--muted-text);">Priority customer support via WhatsApp and phone across all metro and Tier-2 cities.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 10. Indian Verified Buyer Reviews -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-pretitle">Customer Voices</span>
+          <h2 class="section-title">Endorsed by Discerning Indian Homes</h2>
+          <p class="section-desc">Real stories from homeowners, visual designers, and creators across India.</p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;">
+          <div style="background: var(--warm-cream); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 28px;">
+            <div style="color: #C29D59; font-size: 0.95rem; margin-bottom: 12px;">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            </div>
+            <p style="font-size: 0.95rem; color: var(--main-text); line-height: 1.6; margin-bottom: 16px;">
+              "The Strata motorized walnut desk paired with the Bose Symphony bookshelf speakers transformed my Bengaluru home studio. Delivered in 2 days with zero hassle."
+            </p>
+            <div style="font-size: 0.85rem; font-weight: 700; color: var(--walnut-brown);">— Aditya Sharma, Bengaluru</div>
+            <span style="font-size: 0.78rem; color: var(--dark-sage);"><i class="fa-solid fa-circle-check"></i> Verified Owner</span>
+          </div>
+
+          <div style="background: var(--warm-cream); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 28px;">
+            <div style="color: #C29D59; font-size: 0.95rem; margin-bottom: 12px;">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            </div>
+            <p style="font-size: 0.95rem; color: var(--main-text); line-height: 1.6; margin-bottom: 16px;">
+              "The Koto modular bouclé sofa is breathtaking in person. The French fabric texture is plush and the white-glove team carried it up to our 14th-floor apartment in Bandra."
+            </p>
+            <div style="font-size: 0.85rem; font-weight: 700; color: var(--walnut-brown);">— Radhika &amp; Vikram Mehta, Mumbai</div>
+            <span style="font-size: 0.78rem; color: var(--dark-sage);"><i class="fa-solid fa-circle-check"></i> Verified Owner</span>
+          </div>
+
+          <div style="background: var(--warm-cream); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 28px;">
+            <div style="color: #C29D59; font-size: 0.95rem; margin-bottom: 12px;">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            </div>
+            <p style="font-size: 0.95rem; color: var(--main-text); line-height: 1.6; margin-bottom: 16px;">
+              "Finally an Indian platform that marries Apple/Sony level hardware with solid timber furniture. The No-Cost EMI through HDFC bank made the purchase seamless."
+            </p>
+            <div style="font-size: 0.85rem; font-weight: 700; color: var(--walnut-brown);">— Kabir Sengupta, New Delhi</div>
+            <span style="font-size: 0.78rem; color: var(--dark-sage);"><i class="fa-solid fa-circle-check"></i> Verified Owner</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 11. Newsletter Subscription -->
+    <section class="section section-light">
+      <div class="container" style="max-width: 680px; text-align: center;">
+        <span class="section-pretitle">The Nest &amp; Nova Circle</span>
+        <h2 class="section-title">Private Releases &amp; Architectural Previews</h2>
+        <p class="section-desc" style="margin-bottom: 24px;">Subscribe to receive curated interior design notes, firmware alerts, and early access to limited-edition drops.</p>
+        <form class="newsletter-form" style="display: flex; gap: 10px; max-width: 500px; margin: 0 auto;">
+          <input type="email" placeholder="Enter your email address" required style="flex: 1; padding: 14px 18px; border: 1px solid var(--border-color); border-radius: var(--radius-sm); font-size: 0.95rem;">
+          <button type="submit" class="btn btn-primary">Join Circle</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <span class="logo-title" style="color: var(--warm-cream); font-size: 1.7rem;">NEST &amp; NOVA</span>
+          <p>Smart Technology. Timeless Living. A premium lifestyle marketplace curating high-fidelity electronics and organic timber furniture for modern Indian homes.</p>
+          <div class="social-links" style="margin-top: 16px; display: flex; gap: 14px; font-size: 1.2rem;">
+            <a href="#" style="color: var(--light-sage);"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" style="color: var(--light-sage);"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="#" style="color: var(--light-sage);"><i class="fa-brands fa-pinterest"></i></a>
+            <a href="#" style="color: var(--light-sage);"><i class="fa-brands fa-linkedin"></i></a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Electronics</h4>
+          <ul class="footer-links">
+            <li><a href="electronics.html?category=smartphones">Smartphones</a></li>
+            <li><a href="electronics.html?category=laptops">Laptops &amp; Ultrabooks</a></li>
+            <li><a href="electronics.html?category=headphones">Studio Headphones</a></li>
+            <li><a href="electronics.html?category=smart-tvs">OLED Cinema Displays</a></li>
+            <li><a href="electronics.html?category=speakers">Acoustic Audio</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Furniture</h4>
+          <ul class="footer-links">
+            <li><a href="furniture.html?category=sofas">Bouclé Lounges</a></li>
+            <li><a href="furniture.html?category=beds">Solid Oak Platform Beds</a></li>
+            <li><a href="furniture.html?category=office-furniture">Motorized Desks</a></li>
+            <li><a href="furniture.html?category=tables">Live-Edge Dining</a></li>
+            <li><a href="furniture.html?category=storage">Tambour Credenzas</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Customer Care</h4>
+          <ul class="footer-links">
+            <li><a href="about.html">Our Craft Philosophy</a></li>
+            <li><a href="contact.html">Concierge Support</a></li>
+            <li><a href="contact.html#faq">Pan-India Shipping &amp; Returns</a></li>
+            <li><a href="wishlist.html">Your Wishlist</a></li>
+            <li><a href="account.html">Order Status &amp; Invoices</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Studio Headquarters</h4>
+          <p style="color: #BDBDB5; font-size: 0.88rem; line-height: 1.7;">
+            Indiranagar 100 Feet Road<br>
+            Bengaluru, Karnataka 560038<br>
+            concierge@nestandnova.in<br>
+            +91 (080) 4920-8800
+          </p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 NEST &amp; NOVA India Private Limited. All rights reserved. Smart Technology. Timeless Living.</div>
+        <div class="payment-badges" style="display: flex; gap: 14px; font-size: 1.4rem; color: #BDBDB5;">
+          <i class="fa-brands fa-google-pay" title="Google Pay UPI"></i>
+          <i class="fa-solid fa-qrcode" title="BHIM UPI"></i>
+          <i class="fa-brands fa-cc-visa" title="Visa"></i>
+          <i class="fa-brands fa-cc-mastercard" title="Mastercard"></i>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Core Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/products.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', async () => {
+      // Load trending electronics (4 products)
+      try {
+        const elRes = await api.get('/products', { department: 'electronics', trending: 'true', limit: 4 });
+        const elContainer = document.getElementById('trending-electronics-grid');
+        if (elContainer && elRes.data && elRes.data.length > 0) {
+          elContainer.innerHTML = elRes.data.map(p => ProductsEngine.renderCard(p)).join('');
+        }
+      } catch (e) {
+        console.error(e);
+      }
+
+      // Load best selling furniture (4 products)
+      try {
+        const furRes = await api.get('/products', { department: 'furniture', featured: 'true', limit: 4 });
+        const furContainer = document.getElementById('bestselling-furniture-grid');
+        if (furContainer && furRes.data && furRes.data.length > 0) {
+          furContainer.innerHTML = furRes.data.map(p => ProductsEngine.renderCard(p)).join('');
+        }
+      } catch (e) {
+        console.error(e);
+      }
+    });
+  </script>
+</body>
+</html>

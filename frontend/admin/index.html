@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard — NEST &amp; NOVA Control Center</title>
+
+  <!-- Google Fonts & Font Awesome 6 Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Admin Stylesheets -->
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/admin.css">
+</head>
+<body>
+
+  <div class="admin-layout">
+    
+    <!-- Admin Sidebar -->
+    <aside class="admin-sidebar">
+      <div class="admin-sidebar-header">
+        <h2>NEST &amp; NOVA</h2>
+        <span>Administration</span>
+      </div>
+
+      <ul class="admin-nav-list">
+        <li class="admin-nav-item active"><a href="index.html"><i class="fa-solid fa-chart-line"></i> Dashboard</a></li>
+        <li class="admin-nav-item"><a href="products.html"><i class="fa-solid fa-box-archive"></i> Products Catalog</a></li>
+        <li class="admin-nav-item"><a href="orders.html"><i class="fa-solid fa-cart-flatbed"></i> Order Processing</a></li>
+        <li class="admin-nav-item"><a href="customers.html"><i class="fa-solid fa-users"></i> Customers</a></li>
+        <li class="admin-nav-item" style="margin-top: 30px;"><a href="../index.html" target="_blank"><i class="fa-solid fa-store"></i> View Storefront</a></li>
+        <li class="admin-nav-item"><a href="#" onclick="Auth.logout()"><i class="fa-solid fa-power-off"></i> Sign Out</a></li>
+      </ul>
+    </aside>
+
+    <!-- Main Wrapper -->
+    <div class="admin-main-wrapper">
+      
+      <!-- Top Bar -->
+      <div class="admin-topbar">
+        <div>
+          <h1 style="font-size: 1.3rem; color: var(--walnut-brown); margin: 0;">Operational Overview</h1>
+          <span style="font-size: 0.8rem; color: var(--muted-text);">Live e-commerce statistics and inventory signals</span>
+        </div>
+
+        <div class="admin-user-profile">
+          <div class="admin-avatar">A</div>
+          <div>
+            <strong id="admin-profile-name" style="font-size: 0.9rem; color: var(--walnut-brown); display: block;">Administrator</strong>
+            <span style="font-size: 0.75rem; color: var(--dark-sage); font-weight: 600;">Super Admin</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Content Area -->
+      <div class="admin-content-area">
+        
+        <!-- Low Stock Warning Banner -->
+        <div id="low-stock-alert-box" style="display: none; background-color: #FEF3C7; border: 1px solid #F59E0B; border-radius: var(--radius-sm); padding: 16px 20px; margin-bottom: 24px; color: #92400E;">
+          <div style="display: flex; align-items: center; justify-content: space-between;">
+            <div style="display: flex; align-items: center; gap: 12px;">
+              <i class="fa-solid fa-triangle-exclamation" style="font-size: 1.25rem;"></i>
+              <div>
+                <strong>Low Stock Notice:</strong> <span id="low-stock-count">0</span> piece(s) have reached or fallen below safety thresholds (&le; 5 units).
+              </div>
+            </div>
+            <a href="products.html" class="btn btn-secondary btn-sm" style="background-color: #92400E; border: none;">Restock Now</a>
+          </div>
+        </div>
+
+        <!-- 4 KPI Cards -->
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-icon"><i class="fa-solid fa-dollar-sign"></i></div>
+            <div>
+              <div class="stat-value" id="stat-sales">$0.00</div>
+              <div class="stat-label">Net Settled Sales</div>
+            </div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-icon"><i class="fa-solid fa-cart-shopping"></i></div>
+            <div>
+              <div class="stat-value" id="stat-orders">0</div>
+              <div class="stat-label">Total Orders Placed</div>
+            </div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-icon"><i class="fa-solid fa-users"></i></div>
+            <div>
+              <div class="stat-value" id="stat-customers">0</div>
+              <div class="stat-label">Registered Clients</div>
+            </div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-icon"><i class="fa-solid fa-boxes-stacked"></i></div>
+            <div>
+              <div class="stat-value" id="stat-products">0</div>
+              <div class="stat-label">Live Active Products</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Recent Orders Data Card -->
+        <div class="data-card">
+          <div class="data-card-header">
+            <h3 style="font-size: 1.15rem; color: var(--walnut-brown); margin: 0;">Recent Orders &amp; Dispatches</h3>
+            <a href="orders.html" class="btn btn-outline-sage btn-sm">View All Orders</a>
+          </div>
+          <table class="admin-table">
+            <thead>
+              <tr>
+                <th>Order #</th>
+                <th>Client Name</th>
+                <th>Date</th>
+                <th>Total</th>
+                <th>Status</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="recent-orders-tbody">
+              <tr>
+                <td colspan="6" style="text-align: center; padding: 30px;">Loading metrics...</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- Core Scripts -->
+  <script src="../js/data.js"></script>
+  <script src="../js/api.js"></script>
+  <script src="../js/app.js"></script>
+  <script src="../js/auth.js"></script>
+  <script src="../js/admin.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      Admin.loadDashboard();
+    });
+  </script>
+</body>
+</html>
+

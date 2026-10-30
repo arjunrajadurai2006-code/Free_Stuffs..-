@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Furniture &amp; Interior Living — NEST &amp; NOVA (India) | Scandinavian &amp; Solid Wood Design</title>
+  <meta name="description" content="Handcrafted solid American walnut tables, tactile bouclé sectional sofas, and ergonomic studio seating with Pan-India white-glove delivery and free assembly.">
+
+  <!-- Google Fonts & Font Awesome 6 Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Core Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <!-- Announcement Bar -->
+  <div class="announcement-bar">
+    <span class="badge-promo">Complimentary Delivery</span>
+    <span>Free White-Glove Shipping &amp; In-Room Assembly on orders over ₹4,999 &bull; Use code <strong>WELCOME10</strong> for 10% off &bull; Pan-India Delivery</span>
+  </div>
+
+  <!-- Header with Flipkart-Style Department Switcher -->
+  <header class="site-header">
+    <div class="header-container">
+      <a href="index.html" class="brand-logo">
+        <span class="logo-title">NEST &amp; NOVA</span>
+        <span class="logo-subtitle">Smart Technology. Timeless Living.</span>
+      </a>
+
+      <!-- Prominent Department Switcher -->
+      <div class="dept-switcher-bar">
+        <a href="electronics.html" class="dept-pill-btn" title="Switch to Electronics Department">
+          <i class="fa-solid fa-microchip"></i> Electronics
+        </a>
+        <a href="furniture.html" class="dept-pill-btn active" title="Furniture Department Active">
+          <i class="fa-solid fa-couch"></i> Furniture
+        </a>
+      </div>
+
+      <nav class="main-nav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="electronics.html" class="nav-link">Electronics</a>
+        <a href="furniture.html" class="nav-link active">Furniture</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="header-actions">
+        <a href="search.html?dept=furniture" class="action-btn" title="Search Furniture"><i class="fa-solid fa-magnifying-glass"></i></a>
+        <a href="login.html" class="action-btn account-nav-link" title="Customer Account"><i class="fa-regular fa-user"></i></a>
+        <a href="wishlist.html" class="action-btn" title="Wishlist">
+          <i class="fa-regular fa-heart"></i>
+          <span class="badge-counter wishlist-counter" style="display: none;">0</span>
+        </a>
+        <a href="cart.html" class="action-btn" title="Shopping Bag">
+          <i class="fa-solid fa-bag-shopping"></i>
+          <span class="badge-counter cart-counter" style="display: none;">0</span>
+        </a>
+        <button class="mobile-menu-toggle" aria-label="Toggle Navigation"><i class="fa-solid fa-bars"></i></button>
+      </div>
+    </div>
+  </header>
+
+  <main class="catalog-page">
+    <div class="container">
+      
+      <!-- Breadcrumb & Department Banner -->
+      <div class="catalog-header" style="margin-bottom: 24px;">
+        <div class="catalog-breadcrumb" style="margin-bottom: 8px;">
+          <a href="index.html">Home</a> <i class="fa-solid fa-chevron-right"></i>
+          <span>Furniture Department</span>
+        </div>
+        <div style="display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 16px;">
+          <div>
+            <h1 style="font-size: 2.3rem; color: var(--walnut-brown); margin: 0 0 6px;">Artisanal Furniture &amp; Interior Living</h1>
+            <p style="color: var(--muted-text); max-width: 680px;">Sustainably harvested hardwoods, tactile textured bouclés, and ergonomic studio appointments. Free in-room assembly across 50+ Indian cities.</p>
+          </div>
+          <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+            <div style="background: var(--light-sage); padding: 8px 16px; border-radius: var(--radius-sm); font-size: 0.85rem; color: var(--dark-sage); font-weight: 600;">
+              <i class="fa-solid fa-screwdriver-wrench"></i> Free White-Glove In-Room Assembly
+            </div>
+            <div style="background: var(--pale-sage); padding: 8px 16px; border-radius: var(--radius-sm); font-size: 0.85rem; color: var(--walnut-brown); font-weight: 600;">
+              <i class="fa-solid fa-shield-halved"></i> 10-Year Wood Warranty
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Room-Based Quick Navigation (Requirement 2.B) -->
+      <div style="background: var(--pure-white); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 14px 20px; margin-bottom: 20px; display: flex; align-items: center; gap: 16px; flex-wrap: wrap;">
+        <span style="font-size: 0.85rem; font-weight: 700; color: var(--walnut-brown); text-transform: uppercase; letter-spacing: 0.5px;">
+          <i class="fa-solid fa-house" style="color: var(--primary-sage); margin-right: 6px;"></i> Shop By Room:
+        </span>
+        <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+          <button class="btn btn-sm btn-outline-sage room-btn active" onclick="filterByRoom('')">All Rooms</button>
+          <button class="btn btn-sm btn-outline-sage room-btn" onclick="filterByRoom('Living Room')"><i class="fa-solid fa-couch"></i> Living Room</button>
+          <button class="btn btn-sm btn-outline-sage room-btn" onclick="filterByRoom('Bedroom')"><i class="fa-solid fa-bed"></i> Bedroom</button>
+          <button class="btn btn-sm btn-outline-sage room-btn" onclick="filterByRoom('Dining Room')"><i class="fa-solid fa-utensils"></i> Dining Room</button>
+          <button class="btn btn-sm btn-outline-sage room-btn" onclick="filterByRoom('Home Office')"><i class="fa-solid fa-briefcase"></i> Home Office</button>
+          <button class="btn btn-sm btn-outline-sage room-btn" onclick="filterByRoom('Lighting')"><i class="fa-solid fa-lightbulb"></i> Lighting &amp; Decor</button>
+        </div>
+      </div>
+
+      <!-- Icon Category Quick Filter Tabs (Section 4) -->
+      <div style="display: flex; gap: 10px; overflow-x: auto; padding-bottom: 16px; margin-bottom: 24px;">
+        <a href="furniture.html" class="btn btn-sm btn-outline-sage category-tab active" data-cat="">All Furniture</a>
+        <a href="furniture.html?category=sofas" class="btn btn-sm btn-outline-sage category-tab" data-cat="sofas"><i class="fa-solid fa-couch"></i> Sofas &amp; Sectionals</a>
+        <a href="furniture.html?category=beds" class="btn btn-sm btn-outline-sage category-tab" data-cat="beds"><i class="fa-solid fa-bed"></i> Beds &amp; Mattresses</a>
+        <a href="furniture.html?category=chairs" class="btn btn-sm btn-outline-sage category-tab" data-cat="chairs"><i class="fa-solid fa-chair"></i> Chairs &amp; Ergonomics</a>
+        <a href="furniture.html?category=tables" class="btn btn-sm btn-outline-sage category-tab" data-cat="tables"><i class="fa-solid fa-table"></i> Dining &amp; Coffee Tables</a>
+        <a href="furniture.html?category=wardrobes" class="btn btn-sm btn-outline-sage category-tab" data-cat="wardrobes"><i class="fa-solid fa-door-closed"></i> Wardrobes &amp; Closets</a>
+        <a href="furniture.html?category=office-furniture" class="btn btn-sm btn-outline-sage category-tab" data-cat="office-furniture"><i class="fa-solid fa-desktop"></i> Workspaces</a>
+        <a href="furniture.html?category=lighting" class="btn btn-sm btn-outline-sage category-tab" data-cat="lighting"><i class="fa-solid fa-lightbulb"></i> Lighting</a>
+        <a href="furniture.html?category=storage" class="btn btn-sm btn-outline-sage category-tab" data-cat="storage"><i class="fa-solid fa-box-archive"></i> Storage &amp; Sideboards</a>
+        <a href="furniture.html?category=home-decor" class="btn btn-sm btn-outline-sage category-tab" data-cat="home-decor"><i class="fa-solid fa-house"></i> Home Decor</a>
+      </div>
+
+      <!-- Top Sort & PIN Delivery Bar -->
+      <div class="catalog-top-bar" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; padding: 14px 20px; background: var(--pure-white); border: 1px solid var(--border-color); border-radius: var(--radius-md); margin-bottom: 24px;">
+        <div style="display: flex; align-items: center; gap: 12px;">
+          <button class="btn btn-sm btn-outline-sage catalog-mobile-filter-btn" style="display: none;" onclick="document.querySelector('.filter-sidebar').classList.toggle('mobile-open')">
+            <i class="fa-solid fa-sliders"></i> Filters
+          </button>
+          <div id="catalog-product-count" style="font-size: 0.95rem; font-weight: 600; color: var(--walnut-brown);">
+            Loading furniture collection...
+          </div>
+        </div>
+
+        <div style="display: flex; align-items: center; gap: 16px; flex-wrap: wrap;">
+          <!-- Quick PIN Check -->
+          <div style="display: flex; align-items: center; gap: 6px; font-size: 0.85rem; color: var(--muted-text);">
+            <i class="fa-solid fa-location-dot" style="color: var(--primary-sage);"></i>
+            <span>Delivery to:</span>
+            <input type="text" id="quick-pincode" maxlength="6" placeholder="PIN Code" style="width: 86px; padding: 4px 8px; font-size: 0.85rem; border: 1px solid var(--border-color); border-radius: var(--radius-sm);" value="560001">
+            <button class="btn btn-sm btn-outline-sage" style="padding: 4px 10px; font-size: 0.8rem;" onclick="checkQuickPin()">Check</button>
+            <span id="quick-pin-status" style="font-weight: 600; color: var(--dark-sage); font-size: 0.8rem;"></span>
+          </div>
+
+          <div style="display: flex; align-items: center; gap: 8px;">
+            <label style="font-size: 0.88rem; color: var(--muted-text);">Sort by:</label>
+            <select id="catalog-sort-select" class="form-control" style="width: auto; padding: 6px 12px; font-size: 0.88rem;" onchange="ProductsEngine.loadCatalog({ department: 'furniture' })">
+              <option value="newest">Featured &amp; Newest</option>
+              <option value="price_asc">Price: Low to High</option>
+              <option value="price_desc">Price: High to Low</option>
+              <option value="rating_desc">Highest Customer Rated</option>
+              <option value="popular">Most Popular</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <!-- Layout: Filter Sidebar + Products Grid -->
+      <div class="catalog-layout">
+        
+        <!-- Filters Sidebar -->
+        <aside class="filter-sidebar">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+            <h3 style="font-size: 1.1rem; color: var(--walnut-brown);"><i class="fa-solid fa-sliders"></i> Furniture Filters</h3>
+            <div style="display: flex; align-items: center; gap: 10px;">
+              <button onclick="window.location.href = 'furniture.html'" style="font-size: 0.8rem; color: var(--primary-sage); text-decoration: underline; background: none; border: none; cursor: pointer;">Reset All</button>
+              <button class="filter-close-btn" onclick="document.querySelector('.filter-sidebar').classList.remove('mobile-open')" style="display: none; font-size: 1.4rem; background: transparent; color: var(--walnut-brown); cursor: pointer; border: none; line-height: 1;">&times;</button>
+            </div>
+          </div>
+
+          <!-- Price Range Filter (₹ INR) -->
+          <div class="filter-group">
+            <div class="filter-title">Price Range (₹ INR)</div>
+            <div class="price-range-inputs">
+              <input type="number" id="filter-min-price" placeholder="Min ₹" min="0" step="1000">
+              <span>-</span>
+              <input type="number" id="filter-max-price" placeholder="Max ₹" min="0" step="1000">
+            </div>
+            <div style="display: flex; gap: 6px; flex-wrap: wrap; margin-top: 8px;">
+              <button class="btn btn-sm btn-outline" style="font-size: 0.72rem; padding: 2px 6px;" onclick="setPriceFilter(0, 20000)">Under ₹20k</button>
+              <button class="btn btn-sm btn-outline" style="font-size: 0.72rem; padding: 2px 6px;" onclick="setPriceFilter(20000, 50000)">₹20k - ₹50k</button>
+              <button class="btn btn-sm btn-outline" style="font-size: 0.72rem; padding: 2px 6px;" onclick="setPriceFilter(50000, 100000)">Above ₹50k</button>
+            </div>
+            <button class="btn btn-outline-sage btn-sm btn-block" style="margin-top: 10px;" onclick="ProductsEngine.loadCatalog({ department: 'furniture' })">Apply Price</button>
+          </div>
+
+          <!-- Material Filter (Requirement 2.B) -->
+          <div class="filter-group">
+            <div class="filter-title">Primary Material</div>
+            <ul class="filter-list">
+              <li><label class="filter-checkbox-label"><input type="checkbox" name="mat-filter" value="Solid American Walnut" onchange="filterFurnitureProducts()"> Solid American Walnut</label></li>
+              <li><label class="filter-checkbox-label"><input type="checkbox" name="mat-filter" value="Solid European White Oak" onchange="filterFurnitureProducts()"> Solid European White Oak</label></li>
+              <li><label class="filter-checkbox-label"><input type="checkbox" name="mat-filter" value="Tactile Bouclé Fabric" onchange="filterFurnitureProducts()"> Tactile Bouclé Fabric</label></li>
+              <li><label class="filter-checkbox-label"><input type="checkbox" name="mat-filter" value="Travertine Stone" onchange="filterFurnitureProducts()"> Honed Travertine Stone</label></li>
+              <li><label class="filter-checkbox-label"><input type="checkbox" name="mat-filter" value="Top-Grain Italian Leather" onchange="filterFurnitureProducts()"> Top-Grain Leather</label></li>
+            </ul>
+          </div>
+
+          <!-- Seating & Size Filters -->
+          <div class="filter-group">
+            <div class="filter-title">Seating Capacity</div>
+            <ul class="filter-list">
+              <li><label class="filter-checkbox-label"><input type="checkbox" onchange="filterFurnitureProducts()"> 1 Seater (Studio / Lounge)</label></li>
+              <li><label class="filter-checkbox-label"><input type="checkbox" onchange="filterFurnitureProducts()"> 2 - 3 Seater (Compact Living)</label></li>
+              <li><label class="filter-checkbox-label"><input type="checkbox" onchange="filterFurnitureProducts()"> 4 - 5 Seater (Modular Sectional)</label></li>
+              <li><label class="filter-checkbox-label"><input type="checkbox" onchange="filterFurnitureProducts()"> 8 - 10 Seater (Grand Dining)</label></li>
+            </ul>
+          </div>
+
+          <!-- Assembly & Services -->
+          <div class="filter-group">
+            <div class="filter-title">Delivery &amp; Assembly</div>
+            <ul class="filter-list">
+              <li><label class="filter-checkbox-label"><input type="checkbox" checked onchange="filterFurnitureProducts()"> Free In-Room Assembly</label></li>
+              <li><label class="filter-checkbox-label"><input type="checkbox" checked onchange="filterFurnitureProducts()"> 10-Year Wood Warranty</label></li>
+              <li><label class="filter-checkbox-label"><input type="checkbox" onchange="filterFurnitureProducts()"> No-Cost EMI Available</label></li>
+            </ul>
+          </div>
+
+          <!-- Design Houses -->
+          <div class="filter-group">
+            <div class="filter-title">Design Studios</div>
+            <ul class="filter-list">
+              <li><label class="filter-checkbox-label"><input type="checkbox" onchange="filterFurnitureProducts()"> Herman Miller</label></li>
+              <li><label class="filter-checkbox-label"><input type="checkbox" onchange="filterFurnitureProducts()"> Muuto Studio</label></li>
+              <li><label class="filter-checkbox-label"><input type="checkbox" onchange="filterFurnitureProducts()"> West Elm Modern</label></li>
+              <li><label class="filter-checkbox-label"><input type="checkbox" onchange="filterFurnitureProducts()"> Hay Design Denmark</label></li>
+            </ul>
+          </div>
+        </aside>
+
+        <!-- Product Grid Container -->
+        <section>
+          <div class="product-grid" id="catalog-products-grid">
+            <!-- Initial fallback cards with formatINR -->
+            <div class="product-card" data-product-id="10">
+              <div class="card-media-wrapper">
+                <img src="assets/images/sofa.jpg" alt="Koto 3-Piece Modular Bouclé Chaise Sofa" onerror="this.onerror=null; this.src='assets/images/sofa.svg';">
+                <div class="card-badges"><span class="card-badge badge-discount">-14%</span><span class="card-badge badge-department">furniture</span></div>
+                <button class="card-action-wishlist" onclick="event.stopPropagation(); Wishlist.toggle(10, 'Koto 3-Piece Modular Bouclé Chaise Sofa');"><i class="fa-regular fa-heart"></i></button>
+                <button class="card-quick-view-btn" onclick="event.stopPropagation(); openQuickView(10)"><i class="fa-solid fa-eye"></i> Quick View</button>
+              </div>
+              <div class="card-body">
+                <div class="card-brand">Muuto</div>
+                <a href="product.html?id=10" class="card-title">Koto 3-Piece Modular Bouclé Chaise Sofa</a>
+                <div class="card-rating-wrap"><span class="star-icons"><i class="fa-solid fa-star"></i></span><strong>4.9</strong> <span>(92)</span></div>
+                <div style="font-size: 0.78rem; color: var(--dark-sage); font-weight: 600; margin-bottom: 6px;">
+                  <i class="fa-solid fa-screwdriver-wrench"></i> Free In-Room Assembly
+                </div>
+                <div class="card-price-row"><span class="current-price">₹89,999</span><span class="original-price">₹1,04,999</span></div>
+                <div style="font-size: 0.75rem; color: var(--muted-text); margin-bottom: 8px;">No-Cost EMI from ₹7,499/mo</div>
+                <button class="card-btn-cart" onclick="Cart.add(10, null, 1, {name: 'Koto 3-Piece Modular Bouclé Chaise Sofa'})"><i class="fa-solid fa-cart-shopping"></i> Add to Bag</button>
+              </div>
+            </div>
+
+            <div class="product-card" data-product-id="15">
+              <div class="card-media-wrapper">
+                <img src="assets/images/desk.jpg" alt="Strata Motorized Solid Walnut Standing Desk" onerror="this.onerror=null; this.src='assets/images/desk.svg';">
+                <div class="card-badges"><span class="card-badge badge-discount">-14%</span><span class="card-badge badge-department">furniture</span></div>
+                <button class="card-action-wishlist" onclick="event.stopPropagation(); Wishlist.toggle(15, 'Strata Motorized Solid Walnut Standing Desk');"><i class="fa-regular fa-heart"></i></button>
+                <button class="card-quick-view-btn" onclick="event.stopPropagation(); openQuickView(15)"><i class="fa-solid fa-eye"></i> Quick View</button>
+              </div>
+              <div class="card-body">
+                <div class="card-brand">Herman Miller</div>
+                <a href="product.html?id=15" class="card-title">Strata Motorized Solid Walnut Standing Desk</a>
+                <div class="card-rating-wrap"><span class="star-icons"><i class="fa-solid fa-star"></i></span><strong>5.0</strong> <span>(142)</span></div>
+                <div style="font-size: 0.78rem; color: var(--dark-sage); font-weight: 600; margin-bottom: 6px;">
+                  <i class="fa-solid fa-screwdriver-wrench"></i> Free In-Room Assembly
+                </div>
+                <div class="card-price-row"><span class="current-price">₹48,999</span><span class="original-price">₹56,999</span></div>
+                <div style="font-size: 0.75rem; color: var(--muted-text); margin-bottom: 8px;">No-Cost EMI from ₹4,083/mo</div>
+                <button class="card-btn-cart" onclick="Cart.add(15, null, 1, {name: 'Strata Motorized Solid Walnut Standing Desk'})"><i class="fa-solid fa-cart-shopping"></i> Add to Bag</button>
+              </div>
+            </div>
+
+            <div class="product-card" data-product-id="11">
+              <div class="card-media-wrapper">
+                <img src="assets/images/bed.jpg" alt="Nara Solid Oak Low Platform Bed Frame" onerror="this.onerror=null; this.src='assets/images/bed.svg';">
+                <div class="card-badges"><span class="card-badge badge-discount">-13%</span><span class="card-badge badge-department">furniture</span></div>
+                <button class="card-action-wishlist" onclick="event.stopPropagation(); Wishlist.toggle(11, 'Nara Solid Oak Low Platform Bed Frame');"><i class="fa-regular fa-heart"></i></button>
+                <button class="card-quick-view-btn" onclick="event.stopPropagation(); openQuickView(11)"><i class="fa-solid fa-eye"></i> Quick View</button>
+              </div>
+              <div class="card-body">
+                <div class="card-brand">Hay Design</div>
+                <a href="product.html?id=11" class="card-title">Nara Solid Oak Low Platform Bed Frame</a>
+                <div class="card-rating-wrap"><span class="star-icons"><i class="fa-solid fa-star"></i></span><strong>4.9</strong> <span>(68)</span></div>
+                <div style="font-size: 0.78rem; color: var(--dark-sage); font-weight: 600; margin-bottom: 6px;">
+                  <i class="fa-solid fa-screwdriver-wrench"></i> Free In-Room Assembly
+                </div>
+                <div class="card-price-row"><span class="current-price">₹64,999</span><span class="original-price">₹74,999</span></div>
+                <div style="font-size: 0.75rem; color: var(--muted-text); margin-bottom: 8px;">No-Cost EMI from ₹5,416/mo</div>
+                <button class="card-btn-cart" onclick="Cart.add(11, null, 1, {name: 'Nara Solid Oak Low Platform Bed Frame'})"><i class="fa-solid fa-cart-shopping"></i> Add to Bag</button>
+              </div>
+            </div>
+
+            <div class="product-card" data-product-id="12">
+              <div class="card-media-wrapper">
+                <img src="assets/images/chairtask.jpg" alt="Eames Style Ergonomic Studio Task Chair" onerror="this.onerror=null; this.src='assets/images/chair.svg';">
+                <div class="card-badges"><span class="card-badge badge-discount">-12%</span><span class="card-badge badge-department">furniture</span></div>
+                <button class="card-action-wishlist" onclick="event.stopPropagation(); Wishlist.toggle(12, 'Eames Style Ergonomic Studio Task Chair');"><i class="fa-regular fa-heart"></i></button>
+                <button class="card-quick-view-btn" onclick="event.stopPropagation(); openQuickView(12)"><i class="fa-solid fa-eye"></i> Quick View</button>
+              </div>
+              <div class="card-body">
+                <div class="card-brand">Herman Miller</div>
+                <a href="product.html?id=12" class="card-title">Eames Style Ergonomic Studio Task Chair</a>
+                <div class="card-rating-wrap"><span class="star-icons"><i class="fa-solid fa-star"></i></span><strong>5.0</strong> <span>(110)</span></div>
+                <div style="font-size: 0.78rem; color: var(--dark-sage); font-weight: 600; margin-bottom: 6px;">
+                  <i class="fa-solid fa-circle-check"></i> Pre-Assembled
+                </div>
+                <div class="card-price-row"><span class="current-price">₹34,999</span><span class="original-price">₹39,999</span></div>
+                <div style="font-size: 0.75rem; color: var(--muted-text); margin-bottom: 8px;">No-Cost EMI from ₹2,916/mo</div>
+                <button class="card-btn-cart" onclick="Cart.add(12, null, 1, {name: 'Eames Style Ergonomic Studio Task Chair'})"><i class="fa-solid fa-cart-shopping"></i> Add to Bag</button>
+              </div>
+            </div>
+
+            <div class="product-card" data-product-id="13">
+              <div class="card-media-wrapper">
+                <img src="assets/images/diningtable.jpg" alt="Solstice Live-Edge Solid Walnut Dining Table" onerror="this.onerror=null; this.src='assets/images/dining-table.svg';">
+                <div class="card-badges"><span class="card-badge badge-discount">-14%</span><span class="card-badge badge-department">furniture</span></div>
+                <button class="card-action-wishlist" onclick="event.stopPropagation(); Wishlist.toggle(13, 'Solstice Live-Edge Solid Walnut Dining Table');"><i class="fa-regular fa-heart"></i></button>
+                <button class="card-quick-view-btn" onclick="event.stopPropagation(); openQuickView(13)"><i class="fa-solid fa-eye"></i> Quick View</button>
+              </div>
+              <div class="card-body">
+                <div class="card-brand">West Elm</div>
+                <a href="product.html?id=13" class="card-title">Solstice Live-Edge Solid Walnut Dining Table</a>
+                <div class="card-rating-wrap"><span class="star-icons"><i class="fa-solid fa-star"></i></span><strong>4.9</strong> <span>(48)</span></div>
+                <div style="font-size: 0.78rem; color: var(--dark-sage); font-weight: 600; margin-bottom: 6px;">
+                  <i class="fa-solid fa-screwdriver-wrench"></i> Free In-Room Assembly
+                </div>
+                <div class="card-price-row"><span class="current-price">₹79,999</span><span class="original-price">₹92,999</span></div>
+                <div style="font-size: 0.75rem; color: var(--muted-text); margin-bottom: 8px;">No-Cost EMI from ₹6,666/mo</div>
+                <button class="card-btn-cart" onclick="Cart.add(13, null, 1, {name: 'Solstice Live-Edge Solid Walnut Dining Table'})"><i class="fa-solid fa-cart-shopping"></i> Add to Bag</button>
+              </div>
+            </div>
+
+            <div class="product-card" data-product-id="16">
+              <div class="card-media-wrapper">
+                <img src="assets/images/lamp.jpg" alt="Lune Frosted Glass &amp; Brass Pendant Light" onerror="this.onerror=null; this.src='assets/images/lamp.svg';">
+                <div class="card-badges"><span class="card-badge badge-discount">-17%</span><span class="card-badge badge-department">furniture</span></div>
+                <button class="card-action-wishlist" onclick="event.stopPropagation(); Wishlist.toggle(16, 'Lune Frosted Glass &amp; Brass Pendant Light');"><i class="fa-regular fa-heart"></i></button>
+                <button class="card-quick-view-btn" onclick="event.stopPropagation(); openQuickView(16)"><i class="fa-solid fa-eye"></i> Quick View</button>
+              </div>
+              <div class="card-body">
+                <div class="card-brand">Hay Design</div>
+                <a href="product.html?id=16" class="card-title">Lune Frosted Glass &amp; Brass Pendant Light</a>
+                <div class="card-rating-wrap"><span class="star-icons"><i class="fa-solid fa-star"></i></span><strong>4.8</strong> <span>(56)</span></div>
+                <div style="font-size: 0.78rem; color: var(--dark-sage); font-weight: 600; margin-bottom: 6px;">
+                  <i class="fa-solid fa-circle-check"></i> Standard E27
+                </div>
+                <div class="card-price-row"><span class="current-price">₹14,999</span><span class="original-price">₹17,999</span></div>
+                <div style="font-size: 0.75rem; color: var(--muted-text); margin-bottom: 8px;">No-Cost EMI from ₹1,250/mo</div>
+                <button class="card-btn-cart" onclick="Cart.add(16, null, 1, {name: 'Lune Frosted Glass &amp; Brass Pendant Light'})"><i class="fa-solid fa-cart-shopping"></i> Add to Bag</button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <span class="logo-title" style="color: var(--warm-cream); font-size: 1.6rem;">NEST &amp; NOVA</span>
+          <p>Smart Technology. Timeless Living. A curated lifestyle marketplace celebrating high-performance electronics and sustainable artisanal furniture crafted for modern Indian homes.</p>
+          <div style="margin-top: 16px; display: flex; gap: 12px; color: var(--primary-sage); font-size: 1.1rem;">
+            <i class="fa-brands fa-instagram"></i>
+            <i class="fa-brands fa-pinterest"></i>
+            <i class="fa-brands fa-x-twitter"></i>
+            <i class="fa-brands fa-youtube"></i>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer-heading">Electronics Department</h4>
+          <ul class="footer-links">
+            <li><a href="electronics.html?category=smartphones">Flagship Smartphones</a></li>
+            <li><a href="electronics.html?category=laptops">Creator Ultrabooks</a></li>
+            <li><a href="electronics.html?category=headphones">Studio ANC Headphones</a></li>
+            <li><a href="electronics.html?category=smart-tvs">OLED Ambient Displays</a></li>
+            <li><a href="electronics.html?category=speakers">Hi-Fi Walnut Speakers</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-heading">Furniture Department</h4>
+          <ul class="footer-links">
+            <li><a href="furniture.html?category=sofas">Bouclé Sectionals &amp; Sofas</a></li>
+            <li><a href="furniture.html?category=beds">Solid Oak Platform Beds</a></li>
+            <li><a href="furniture.html?category=chairs">Ergonomic Leather Chairs</a></li>
+            <li><a href="furniture.html?category=tables">Live-Edge Dining Tables</a></li>
+            <li><a href="furniture.html?category=office-furniture">Motorized Standing Desks</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-heading">Customer Care</h4>
+          <ul class="footer-links">
+            <li><a href="about.html">About Nest &amp; Nova</a></li>
+            <li><a href="contact.html">Pan-India Support &amp; Service</a></li>
+            <li><a href="wishlist.html">Your Wishlist</a></li>
+            <li><a href="cart.html">Shopping Bag</a></li>
+            <li><a href="account.html">Track Order &amp; Delivery</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-heading">Flagship Experience Atelier</h4>
+          <p style="color: #BDBDB5; font-size: 0.88rem; line-height: 1.6;">
+            100 Feet Road, Indiranagar Design Quarter<br>
+            Bengaluru, Karnataka &ndash; 560038, India<br>
+            <span style="color: var(--primary-sage);"><i class="fa-solid fa-phone"></i> 1800-419-NOVA (Toll Free)</span><br>
+            concierge@nestandnova.in
+          </p>
+          <div style="margin-top: 12px; font-size: 0.8rem; color: #9A9A92;">
+            <i class="fa-solid fa-shield-halved" style="color: var(--primary-sage);"></i> 100% Genuine Products &bull; GST Invoices Provided
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>&copy; 2026 NEST &amp; NOVA India Private Limited. All rights reserved. Prices inclusive of all applicable Indian taxes (GST).</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Core Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/products.js"></script>
+
+  <script>
+    let activeRoomFilter = '';
+
+    function setPriceFilter(min, max) {
+      document.getElementById('filter-min-price').value = min;
+      document.getElementById('filter-max-price').value = max;
+      ProductsEngine.loadCatalog({ department: 'furniture' });
+    }
+
+    function filterByRoom(room) {
+      activeRoomFilter = room;
+      document.querySelectorAll('.room-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.textContent.includes(room) || (room === '' && btn.textContent.includes('All Rooms')));
+      });
+      filterFurnitureProducts();
+    }
+
+    function filterFurnitureProducts() {
+      const selectedMaterials = Array.from(document.querySelectorAll('input[name="mat-filter"]:checked')).map(cb => cb.value.toLowerCase());
+      const minEl = document.getElementById('filter-min-price');
+      const maxEl = document.getElementById('filter-max-price');
+      const minPrice = (minEl && minEl.value) ? parseFloat(minEl.value) : 0;
+      const maxPrice = (maxEl && maxEl.value) ? parseFloat(maxEl.value) : Infinity;
+
+      let items = (window.NEST_NOVA_DATA && window.NEST_NOVA_DATA.products) 
+        ? window.NEST_NOVA_DATA.products.filter(p => p.department === 'furniture')
+        : [];
+
+      // Filter by category URL param if present
+      const urlParams = new URLSearchParams(window.location.search);
+      const catSlug = urlParams.get('category');
+      if (catSlug) {
+        items = items.filter(p => {
+          const cat = (window.NEST_NOVA_DATA.categories || []).find(c => c.slug === catSlug);
+          return cat ? p.category_id === cat.id : true;
+        });
+      }
+
+      // Filter by room
+      if (activeRoomFilter) {
+        items = items.filter(p => p.room_type && p.room_type.toLowerCase().includes(activeRoomFilter.toLowerCase()));
+      }
+
+      // Filter by price
+      items = items.filter(p => p.price >= minPrice && p.price <= maxPrice);
+
+      // Filter by materials
+      if (selectedMaterials.length > 0) {
+        items = items.filter(p => {
+          if (!p.material) return false;
+          const pMat = p.material.toLowerCase();
+          return selectedMaterials.some(m => pMat.includes(m.split(' ')[0]) || pMat.includes(m));
+        });
+      }
+
+      const grid = document.getElementById('catalog-products-grid');
+      const countEl = document.getElementById('catalog-product-count');
+      if (countEl) countEl.textContent = `Showing ${items.length} artisanal furniture pieces`;
+
+      if (items.length === 0) {
+        grid.innerHTML = `
+          <div class="empty-state" style="grid-column: 1 / -1;">
+            <div class="empty-state-icon"><i class="fa-solid fa-couch"></i></div>
+            <h3 class="empty-state-title">No Furniture Matches These Filters</h3>
+            <p class="empty-state-desc">Try widening your price range, choosing another room category, or resetting all filters.</p>
+            <button class="btn btn-primary btn-sm" onclick="window.location.href='furniture.html'">Reset Filters</button>
+          </div>
+        `;
+      } else {
+        grid.innerHTML = items.map(p => ProductsEngine.renderCard(p)).join('');
+      }
+    }
+
+    async function checkQuickPin() {
+      const pin = document.getElementById('quick-pincode').value.trim();
+      const statusEl = document.getElementById('quick-pin-status');
+      if (!/^\d{6}$/.test(pin)) {
+        statusEl.style.color = 'var(--error-color)';
+        statusEl.textContent = 'Invalid 6-digit PIN';
+        return;
+      }
+      try {
+        const res = await api.get('/pincode/check', { pincode: pin });
+        if (res.available) {
+          statusEl.style.color = 'var(--dark-sage)';
+          statusEl.innerHTML = `<i class="fa-solid fa-circle-check"></i> Delivers to ${res.city} in ${res.estimated_days} days (Assembly Included)`;
+        } else {
+          statusEl.style.color = 'var(--error-color)';
+          statusEl.textContent = res.message || 'Delivery not available';
+        }
+      } catch (e) {
+        statusEl.textContent = 'Standard Delivery (3-5 days)';
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const urlParams = new URLSearchParams(window.location.search);
+      const cat = urlParams.get('category') || '';
+      document.querySelectorAll('.category-tab').forEach(tab => {
+        tab.classList.toggle('active', tab.dataset.cat === cat);
+      });
+
+      ProductsEngine.loadCatalog({ department: 'furniture' });
+    });
+  </script>
+</body>
+</html>

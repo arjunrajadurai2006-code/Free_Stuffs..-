@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#FBF9F5"/><stop offset="100%" stop-color="#DFE5DB"/></linearGradient>
+    <linearGradient id="body" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#363834"/><stop offset="100%" stop-color="#1B1C1A"/></linearGradient>
+    <linearGradient id="lens" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#1B2B38"/><stop offset="50%" stop-color="#2D5369"/><stop offset="100%" stop-color="#0E171E"/></linearGradient>
+    <filter id="drop" x="-10%" y="-10%" width="120%" height="130%"><feDropShadow dx="0" dy="16" stdDeviation="20" flood-color="#292A26" flood-opacity="0.2"/></filter>
+  </defs>
+  <rect width="800" height="600" fill="url(#bg)"/>
+  <ellipse cx="400" cy="480" rx="220" ry="26" fill="#C5CDC0" opacity="0.6"/>
+
+  <g filter="url(#drop)" transform="translate(190, 140)">
+    <!-- Camera Body -->
+    <rect x="20" y="60" width="380" height="230" rx="20" fill="url(#body)"/>
+    <rect x="140" y="30" width="140" height="40" rx="8" fill="#252623"/>
+    <!-- Textured Leatherette Grip -->
+    <rect x="20" y="90" width="110" height="200" rx="10" fill="#292A27"/>
+    <!-- Top Dials -->
+    <rect x="60" y="44" width="46" height="18" rx="4" fill="#C8CFC2"/>
+    <rect x="310" y="44" width="56" height="18" rx="4" fill="#C8CFC2"/>
+    <circle cx="118" cy="46" r="10" fill="#C0392B"/>
+    <!-- Big Front Lens -->
+    <circle cx="250" cy="180" r="95" fill="#141513"/>
+    <circle cx="250" cy="180" r="85" fill="#5A6154"/>
+    <circle cx="250" cy="180" r="72" fill="#242622"/>
+    <circle cx="250" cy="180" r="60" fill="url(#lens)"/>
+    <ellipse cx="235" cy="165" rx="30" ry="20" fill="#FFFFFF" opacity="0.25"/>
+  </g>
+  <text x="400" y="530" font-family="'DM Sans', sans-serif" font-weight="700" font-size="22" fill="#5B3928" text-anchor="middle">LUMINA MARK V MIRRORLESS</text>
+  <text x="400" y="555" font-family="'Inter', sans-serif" font-weight="500" font-size="14" fill="#77776F" text-anchor="middle">61MP Full-Frame &bull; 8K Cinematic Precision</text>
+</svg>

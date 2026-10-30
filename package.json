@@ -1,0 +1,37 @@
+{
+  "name": "nest-and-nova",
+  "version": "1.0.0",
+  "description": "NEST & NOVA - Premium Electronics & Furniture E-Commerce Platform",
+  "main": "backend/server.js",
+  "scripts": {
+    "start": "node backend/server.js",
+    "dev": "node --watch backend/server.js",
+    "db:setup": "node backend/scripts/setup-db.js",
+    "db:seed": "node backend/scripts/seed-db.js",
+    "images:generate": "node backend/scripts/generate-luxury-images.js",
+    "client:sync": "node backend/scripts/generate-client-data.js && node backend/scripts/fix-html-paths.js"
+  },
+  "keywords": [
+    "ecommerce",
+    "electronics",
+    "furniture",
+    "express",
+    "mysql",
+    "vanilla-js"
+  ],
+  "author": "Nest & Nova Team",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "express-rate-limit": "^7.5.0",
+    "helmet": "^8.0.0",
+    "jsonwebtoken": "^9.0.2",
+    "multer": "^1.4.5-lts.1",
+    "mysql2": "^3.12.0",
+    "nodemailer": "^6.10.0"
+  }
+}
