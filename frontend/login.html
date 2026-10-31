@@ -33,6 +33,7 @@
       </nav>
 
       <div class="header-actions">
+        <a href="login.html" class="header-login-btn account-nav-link" title="Login"><i class="fa-regular fa-user"></i> <span class="nav-label">Login</span></a>
         <a href="cart.html" class="action-btn" title="Shopping Bag">
           <i class="fa-solid fa-bag-shopping"></i>
           <span class="badge-counter cart-counter" style="display: none;">0</span>
@@ -55,9 +56,14 @@
           <div style="font-weight: 700; color: var(--dark-sage); margin-bottom: 6px;"><i class="fa-solid fa-key"></i> Fast Demo Credentials:</div>
           <div>👤 <strong>Customer:</strong> customer@nestandnova.com / customer123</div>
           <div style="margin-top: 4px;">⚡ <strong>Admin:</strong> admin@nestandnova.com / admin123</div>
-          <button type="button" class="btn btn-outline-sage btn-sm" style="margin-top: 8px; width: 100%; font-size: 0.75rem;" onclick="document.getElementById('login-email').value='customer@nestandnova.com'; document.getElementById('login-password').value='customer123';">
-            Fill Customer Credentials
-          </button>
+          <div style="display: flex; gap: 8px; margin-top: 10px;">
+            <button type="button" class="btn btn-outline-sage btn-sm" style="flex: 1; font-size: 0.75rem;" onclick="document.getElementById('login-email').value='customer@nestandnova.com'; document.getElementById('login-password').value='customer123';">
+              Fill Customer
+            </button>
+            <button type="button" class="btn btn-outline-sage btn-sm" style="flex: 1; font-size: 0.75rem;" onclick="document.getElementById('login-email').value='admin@nestandnova.com'; document.getElementById('login-password').value='admin123';">
+              Fill Admin
+            </button>
+          </div>
         </div>
 
         <form onsubmit="Auth.handleLogin(event)">

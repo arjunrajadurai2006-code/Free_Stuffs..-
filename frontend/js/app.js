@@ -73,9 +73,9 @@ function updateAuthUI(user) {
       }
     } else {
       link.href = inAdmin ? '../login.html' : 'login.html';
-      link.title = 'Sign In / Register';
+      link.title = 'Login';
       if (link.querySelector('.nav-label')) {
-        link.querySelector('.nav-label').textContent = 'Sign In';
+        link.querySelector('.nav-label').textContent = 'Login';
       }
     }
   });

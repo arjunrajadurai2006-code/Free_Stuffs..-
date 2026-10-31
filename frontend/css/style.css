@@ -240,6 +240,37 @@ ul, ol {
   color: var(--dark-sage);
 }
 
+.header-login-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 8px 16px;
+  border-radius: var(--radius-full);
+  background-color: var(--light-sage);
+  color: var(--dark-sage);
+  border: 1.5px solid var(--primary-sage);
+  font-family: var(--font-primary);
+  font-size: 0.88rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all var(--transition-fast);
+  white-space: nowrap;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.header-login-btn:hover {
+  background-color: var(--primary-sage);
+  color: var(--pure-white);
+  border-color: var(--primary-sage);
+  box-shadow: 0 4px 12px rgba(86, 107, 82, 0.25);
+  transform: translateY(-1px);
+}
+
+.header-login-btn i {
+  font-size: 0.95rem;
+}
+
 .action-btn .badge-counter {
   position: absolute;
   top: 2px;
