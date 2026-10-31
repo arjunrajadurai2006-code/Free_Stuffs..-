@@ -46,8 +46,15 @@ let currentUser = null;
 
 async function checkAuthStatus() {
   try {
+    // If running in demo / client-side storage mode and no session is stored, avoid unnecessary network calls
+    if (typeof DemoStore !== 'undefined' && !DemoStore.getCurrentUser() && !document.cookie.includes('token')) {
+      currentUser = null;
+      updateAuthUI(null);
+      return null;
+    }
+
     const res = await api.get('/auth/me');
-    if (res.success && res.user) {
+    if (res && res.success && res.user) {
       currentUser = res.user;
       updateAuthUI(currentUser);
       return currentUser;

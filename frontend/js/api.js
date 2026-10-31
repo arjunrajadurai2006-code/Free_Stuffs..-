@@ -202,8 +202,19 @@ const API_BASE = (window.location.protocol === 'file:')
   ? 'http://localhost:5000/api'
   : '/api';
 
+// Detect whether backend server is unreachable (e.g. Vercel static deployment or server down)
+let isBackendOffline = false;
+
 const api = {
   async request(endpoint, options = {}) {
+    // If backend is known to be offline in static/demo mode, immediately use client demo store
+    if (isBackendOffline) {
+      const fallback = this.offlineFallback(endpoint, options);
+      if (fallback !== null) {
+        return fallback;
+      }
+    }
+
     const url = endpoint.startsWith('http') ? endpoint : `${API_BASE}${endpoint}`;
     const defaultHeaders = {
       'Accept': 'application/json'
@@ -238,6 +249,7 @@ const api = {
 
       // If server returned 404/500/502/503 (e.g. Vercel static host without backend), attempt demo fallback
       if (response.status === 404 || response.status >= 500) {
+        isBackendOffline = true;
         const fallback = this.offlineFallback(endpoint, options);
         if (fallback !== null) {
           return fallback;
@@ -260,6 +272,7 @@ const api = {
       }
 
       // Network failures (e.g. TypeError: Failed to fetch) or static host fallback
+      isBackendOffline = true;
       const fallbackResult = this.offlineFallback(endpoint, options);
       if (fallbackResult !== null) {
         return fallbackResult;

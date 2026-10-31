@@ -2,10 +2,6 @@
  * NEST & NOVA 2.0 — Products Catalog, Spec Engine & Indian Detail View
  */
 
-const formatINR = (typeof window !== 'undefined' && window.formatINR) ? window.formatINR : function(n) {
-  return '₹' + Number(n || 0).toLocaleString('en-IN');
-};
-
 const productImageMap = {
   1: 'assets/images/headphone.jpg',
   2: 'assets/images/smartphone.jpg',
