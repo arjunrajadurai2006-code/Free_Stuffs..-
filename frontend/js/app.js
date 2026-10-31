@@ -24,7 +24,7 @@ function showToast(message, type = 'success') {
 
   const toast = document.createElement('div');
   toast.className = `toast toast-${type}`;
-  
+
   const icon = type === 'success' ? 'fa-circle-check' : (type === 'error' ? 'fa-circle-exclamation' : 'fa-bell');
   toast.innerHTML = `
     <i class="fa-solid ${icon}" style="font-size: 1.2rem; color: ${type === 'success' ? 'var(--dark-sage)' : 'var(--error-color)'};"></i>
@@ -64,8 +64,8 @@ function updateAuthUI(user) {
   const accountLinks = document.querySelectorAll('.account-nav-link');
   accountLinks.forEach(link => {
     if (user) {
-      link.href = user.role === 'admin' 
-        ? (inAdmin ? 'index.html' : 'admin/index.html') 
+      link.href = user.role === 'admin'
+        ? (inAdmin ? 'index.html' : 'admin/index.html')
         : (inAdmin ? '../account.html' : 'account.html');
       link.title = `Namaste, ${user.full_name}`;
       if (link.querySelector('.nav-label')) {
@@ -278,9 +278,9 @@ const CompareEngine = {
       <tr style="border-bottom: 1px solid var(--border-color);">
         <td style="padding: 12px 16px; font-weight: 600; color: var(--walnut-brown); background: #FAF9F5; border: 1px solid var(--border-color);">${key}</td>
         ${products.map(p => {
-          const specs = typeof p.specifications === 'string' ? JSON.parse(p.specifications) : (p.specifications || {});
-          return `<td style="padding: 12px 16px; color: var(--main-text); border: 1px solid var(--border-color);">${specs[key] || '—'}</td>`;
-        }).join('')}
+      const specs = typeof p.specifications === 'string' ? JSON.parse(p.specifications) : (p.specifications || {});
+      return `<td style="padding: 12px 16px; color: var(--main-text); border: 1px solid var(--border-color);">${specs[key] || '—'}</td>`;
+    }).join('')}
       </tr>
     `).join('');
 
@@ -459,12 +459,61 @@ function initGlobalSearch() {
 function initMobileNavigation() {
   const toggler = document.querySelector('.mobile-menu-toggle');
   const nav = document.querySelector('.main-nav');
-  if (toggler && nav) {
-    toggler.addEventListener('click', () => {
-      nav.classList.toggle('active');
-      toggler.innerHTML = nav.classList.contains('active') ? '<i class="fa-solid fa-xmark"></i>' : '<i class="fa-solid fa-bars"></i>';
-    });
+  if (!toggler || !nav) return;
+
+  // Create a backdrop element for the mobile nav overlay
+  let backdrop = document.querySelector('.nav-backdrop');
+  if (!backdrop) {
+    backdrop = document.createElement('div');
+    backdrop.className = 'nav-backdrop';
+    document.body.appendChild(backdrop);
   }
+
+  function openNav() {
+    nav.classList.add('active');
+    backdrop.classList.add('active');
+    document.body.style.overflow = 'hidden';
+    toggler.innerHTML = '<i class="fa-solid fa-xmark"></i>';
+    toggler.setAttribute('aria-expanded', 'true');
+  }
+
+  function closeNav() {
+    nav.classList.remove('active');
+    backdrop.classList.remove('active');
+    document.body.style.overflow = '';
+    toggler.innerHTML = '<i class="fa-solid fa-bars"></i>';
+    toggler.setAttribute('aria-expanded', 'false');
+  }
+
+  toggler.addEventListener('click', () => {
+    if (nav.classList.contains('active')) {
+      closeNav();
+    } else {
+      openNav();
+    }
+  });
+
+  // Close nav when backdrop is clicked
+  backdrop.addEventListener('click', closeNav);
+
+  // Close nav when a nav link is tapped (mobile UX)
+  nav.querySelectorAll('.nav-link').forEach(link => {
+    link.addEventListener('click', closeNav);
+  });
+
+  // Close nav on Escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && nav.classList.contains('active')) {
+      closeNav();
+    }
+  });
+
+  // Re-enable scroll if window resizes to desktop
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 768) {
+      closeNav();
+    }
+  });
 }
 
 // Newsletter Subscription Form

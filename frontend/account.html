@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,13 +10,16 @@
   <!-- Google Fonts & Font Awesome 6 Icons -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Inter:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
   <!-- Core Stylesheets -->
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/responsive.css">
 </head>
+
 <body style="background-color: #F8FAF6;">
 
   <!-- Header -->
@@ -63,34 +67,42 @@
 
   <main style="padding: 40px 0 80px;">
     <div class="container">
-      
-      <div style="display: grid; grid-template-columns: 280px 1fr; gap: 40px;">
-        
+
+      <div class="account-layout-grid" style="display: grid; grid-template-columns: 280px 1fr; gap: 40px;">
+
         <!-- Account Sidebar -->
         <aside>
-          <div style="background-color: var(--pure-white); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 28px; box-shadow: var(--shadow-subtle); text-align: center; margin-bottom: 24px;">
-            <div style="width: 64px; height: 64px; border-radius: var(--radius-full); background: var(--light-sage); color: var(--dark-sage); font-size: 1.6rem; font-weight: 700; display: flex; align-items: center; justify-content: center; margin: 0 auto 14px;">
+          <div
+            style="background-color: var(--pure-white); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 28px; box-shadow: var(--shadow-subtle); text-align: center; margin-bottom: 24px;">
+            <div
+              style="width: 64px; height: 64px; border-radius: var(--radius-full); background: var(--light-sage); color: var(--dark-sage); font-size: 1.6rem; font-weight: 700; display: flex; align-items: center; justify-content: center; margin: 0 auto 14px;">
               <i class="fa-regular fa-user"></i>
             </div>
-            <h2 id="account-full-name" style="font-size: 1.25rem; color: var(--walnut-brown); margin-bottom: 4px;">Loading...</h2>
+            <h2 id="account-full-name" style="font-size: 1.25rem; color: var(--walnut-brown); margin-bottom: 4px;">
+              Loading...</h2>
             <div id="account-email" style="font-size: 0.85rem; color: var(--muted-text); margin-bottom: 12px;">...</div>
             <div id="account-phone" style="font-size: 0.82rem; color: var(--dark-sage); font-weight: 500;">...</div>
           </div>
 
-          <div style="background-color: var(--pure-white); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 16px; box-shadow: var(--shadow-subtle);">
+          <div
+            style="background-color: var(--pure-white); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 16px; box-shadow: var(--shadow-subtle);">
             <ul style="display: flex; flex-direction: column; gap: 6px;">
               <li>
-                <button class="btn btn-outline-sage btn-block" style="justify-content: flex-start;" onclick="showAccountTab('orders')">
+                <button class="btn btn-outline-sage btn-block" style="justify-content: flex-start;"
+                  onclick="showAccountTab('orders')">
                   <i class="fa-solid fa-box"></i> Order History
                 </button>
               </li>
               <li>
-                <button class="btn btn-outline btn-block" style="justify-content: flex-start;" onclick="showAccountTab('profile')">
+                <button class="btn btn-outline btn-block" style="justify-content: flex-start;"
+                  onclick="showAccountTab('profile')">
                   <i class="fa-solid fa-user-pen"></i> Personal Details
                 </button>
               </li>
               <li>
-                <button class="btn btn-outline btn-block" style="justify-content: flex-start; color: var(--error-color); border-color: #E2B2AC;" onclick="Auth.logout()">
+                <button class="btn btn-outline btn-block"
+                  style="justify-content: flex-start; color: var(--error-color); border-color: #E2B2AC;"
+                  onclick="Auth.logout()">
                   <i class="fa-solid fa-power-off"></i> Sign Out
                 </button>
               </li>
@@ -100,10 +112,11 @@
 
         <!-- Main Account Content Area -->
         <div>
-          
+
           <!-- Tab 1: Orders -->
           <div id="tab-orders">
-            <h2 style="font-size: 1.8rem; color: var(--walnut-brown); margin-bottom: 20px;">Order History &amp; Tracking</h2>
+            <h2 style="font-size: 1.8rem; color: var(--walnut-brown); margin-bottom: 20px;">Order History &amp; Tracking
+            </h2>
             <div id="user-orders-list">
               <div style="text-align: center; padding: 50px 0;">
                 <i class="fa-solid fa-circle-notch fa-spin" style="font-size: 2rem; color: var(--primary-sage);"></i>
@@ -113,9 +126,11 @@
           </div>
 
           <!-- Tab 2: Profile Settings -->
-          <div id="tab-profile" style="display: none; background: var(--pure-white); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 32px; box-shadow: var(--shadow-subtle);">
-            <h2 style="font-size: 1.6rem; color: var(--walnut-brown); margin-bottom: 20px;">Update Personal Information</h2>
-            
+          <div id="tab-profile"
+            style="display: none; background: var(--pure-white); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 32px; box-shadow: var(--shadow-subtle);">
+            <h2 style="font-size: 1.6rem; color: var(--walnut-brown); margin-bottom: 20px;">Update Personal Information
+            </h2>
+
             <form onsubmit="handleProfileUpdate(event)">
               <div class="form-group">
                 <label class="form-label" for="edit-name">Full Name</label>
@@ -205,5 +220,5 @@
     });
   </script>
 </body>
-</html>
 
+</html>
